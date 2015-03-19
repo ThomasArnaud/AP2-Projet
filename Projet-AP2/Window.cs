@@ -39,9 +39,11 @@ namespace Projet_AP2
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void CardButton_Click(object sender, EventArgs e)
         {
-
+            Button cardButton = (Button)sender;
+            //Determiner le numéro de la carte  et appel à play à faire
+            cardButton.Visible = false;
         }
     }
 }
