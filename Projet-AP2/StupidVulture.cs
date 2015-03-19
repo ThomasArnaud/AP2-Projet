@@ -25,6 +25,30 @@ namespace Projet_AP2
         public StupidVulture(List<Player> players)
         {
             this.players = players;
+
+            // Create the deck of cards
+            List<Card> cards = new List<Card>();
+            
+            for(SByte i = -5; i <= 15; i++)
+                if(i != 0)
+                    cards.Add(new Card(i));
+
+            // Shuffle 'em
+            // http://stackoverflow.com/questions/1150646/card-shuffling-in-c-sharp#answer-1150699
+            Random r = new Random();
+
+            for(Byte i = (Byte) cards.Count; i > 0; i--)
+            {
+                int k = r.Next(i + 1);
+                Card tmp = cards[i];
+                cards[i] = cards[k];
+                cards[k] = tmp;
+            }
+
+            foreach(Card c in cards)
+            {
+                Console.WriteLine("{0}", c.Number);
+            }
         }
     }
 }

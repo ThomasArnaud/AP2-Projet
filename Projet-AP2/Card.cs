@@ -11,12 +11,12 @@ namespace Projet_AP2
         /// <summary>
         /// Represents the number on a card.
         /// </summary>
-        protected Byte number;
+        protected SByte number;
 
         /// <summary>
         /// Accessor for a card's number.
         /// </summary>
-        public Byte Number
+        public SByte Number
         {
             get 
             {
@@ -28,7 +28,7 @@ namespace Projet_AP2
         /// Creates a new card.
         /// </summary>
         /// <param name="number">Number on the card.</param>
-        public Card(Byte number)
+        public Card(SByte number)
         {
             this.number = number;
         }
