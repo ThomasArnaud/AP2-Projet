@@ -37,7 +37,24 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.card1Button = new System.Windows.Forms.Button();
+            this.card2Button = new System.Windows.Forms.Button();
+            this.card3Button = new System.Windows.Forms.Button();
+            this.card4Button = new System.Windows.Forms.Button();
+            this.card5Button = new System.Windows.Forms.Button();
+            this.card6Button = new System.Windows.Forms.Button();
+            this.card7Button = new System.Windows.Forms.Button();
+            this.card8Button = new System.Windows.Forms.Button();
+            this.card9Button = new System.Windows.Forms.Button();
+            this.card10Button = new System.Windows.Forms.Button();
+            this.card11Button = new System.Windows.Forms.Button();
+            this.card12Button = new System.Windows.Forms.Button();
+            this.card13Button = new System.Windows.Forms.Button();
+            this.card14Button = new System.Windows.Forms.Button();
+            this.card15Button = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,8 +105,10 @@
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.quitterToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -113,18 +132,180 @@
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(760, 439);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // card1Button
+            // 
+            this.card1Button.Location = new System.Drawing.Point(28, 472);
+            this.card1Button.Name = "card1Button";
+            this.card1Button.Size = new System.Drawing.Size(30, 60);
+            this.card1Button.TabIndex = 3;
+            this.card1Button.Text = "1";
+            this.card1Button.UseVisualStyleBackColor = true;
+            // 
+            // card2Button
+            // 
+            this.card2Button.Location = new System.Drawing.Point(78, 472);
+            this.card2Button.Name = "card2Button";
+            this.card2Button.Size = new System.Drawing.Size(30, 60);
+            this.card2Button.TabIndex = 4;
+            this.card2Button.Text = "2";
+            this.card2Button.UseVisualStyleBackColor = true;
+            // 
+            // card3Button
+            // 
+            this.card3Button.Location = new System.Drawing.Point(128, 472);
+            this.card3Button.Name = "card3Button";
+            this.card3Button.Size = new System.Drawing.Size(30, 60);
+            this.card3Button.TabIndex = 5;
+            this.card3Button.Text = "3";
+            this.card3Button.UseVisualStyleBackColor = true;
+            // 
+            // card4Button
+            // 
+            this.card4Button.Location = new System.Drawing.Point(178, 472);
+            this.card4Button.Name = "card4Button";
+            this.card4Button.Size = new System.Drawing.Size(30, 60);
+            this.card4Button.TabIndex = 6;
+            this.card4Button.Text = "4";
+            this.card4Button.UseVisualStyleBackColor = true;
+            this.card4Button.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // card5Button
+            // 
+            this.card5Button.Location = new System.Drawing.Point(228, 472);
+            this.card5Button.Name = "card5Button";
+            this.card5Button.Size = new System.Drawing.Size(30, 60);
+            this.card5Button.TabIndex = 7;
+            this.card5Button.Text = "5";
+            this.card5Button.UseVisualStyleBackColor = true;
+            // 
+            // card6Button
+            // 
+            this.card6Button.Location = new System.Drawing.Point(278, 472);
+            this.card6Button.Name = "card6Button";
+            this.card6Button.Size = new System.Drawing.Size(30, 60);
+            this.card6Button.TabIndex = 8;
+            this.card6Button.Text = "6";
+            this.card6Button.UseVisualStyleBackColor = true;
+            // 
+            // card7Button
+            // 
+            this.card7Button.Location = new System.Drawing.Point(328, 472);
+            this.card7Button.Name = "card7Button";
+            this.card7Button.Size = new System.Drawing.Size(30, 60);
+            this.card7Button.TabIndex = 9;
+            this.card7Button.Text = "7";
+            this.card7Button.UseVisualStyleBackColor = true;
+            // 
+            // card8Button
+            // 
+            this.card8Button.Location = new System.Drawing.Point(378, 472);
+            this.card8Button.Name = "card8Button";
+            this.card8Button.Size = new System.Drawing.Size(30, 60);
+            this.card8Button.TabIndex = 10;
+            this.card8Button.Text = "8";
+            this.card8Button.UseVisualStyleBackColor = true;
+            // 
+            // card9Button
+            // 
+            this.card9Button.Location = new System.Drawing.Point(428, 472);
+            this.card9Button.Name = "card9Button";
+            this.card9Button.Size = new System.Drawing.Size(30, 60);
+            this.card9Button.TabIndex = 11;
+            this.card9Button.Text = "9";
+            this.card9Button.UseVisualStyleBackColor = true;
+            // 
+            // card10Button
+            // 
+            this.card10Button.Location = new System.Drawing.Point(478, 472);
+            this.card10Button.Name = "card10Button";
+            this.card10Button.Size = new System.Drawing.Size(30, 60);
+            this.card10Button.TabIndex = 12;
+            this.card10Button.Text = "10";
+            this.card10Button.UseVisualStyleBackColor = true;
+            // 
+            // card11Button
+            // 
+            this.card11Button.Location = new System.Drawing.Point(528, 472);
+            this.card11Button.Name = "card11Button";
+            this.card11Button.Size = new System.Drawing.Size(30, 60);
+            this.card11Button.TabIndex = 13;
+            this.card11Button.Text = "11";
+            this.card11Button.UseVisualStyleBackColor = true;
+            // 
+            // card12Button
+            // 
+            this.card12Button.Location = new System.Drawing.Point(578, 472);
+            this.card12Button.Name = "card12Button";
+            this.card12Button.Size = new System.Drawing.Size(30, 60);
+            this.card12Button.TabIndex = 14;
+            this.card12Button.Text = "12";
+            this.card12Button.UseVisualStyleBackColor = true;
+            // 
+            // card13Button
+            // 
+            this.card13Button.Location = new System.Drawing.Point(628, 472);
+            this.card13Button.Name = "card13Button";
+            this.card13Button.Size = new System.Drawing.Size(30, 60);
+            this.card13Button.TabIndex = 15;
+            this.card13Button.Text = "13";
+            this.card13Button.UseVisualStyleBackColor = true;
+            // 
+            // card14Button
+            // 
+            this.card14Button.Location = new System.Drawing.Point(678, 472);
+            this.card14Button.Name = "card14Button";
+            this.card14Button.Size = new System.Drawing.Size(30, 60);
+            this.card14Button.TabIndex = 16;
+            this.card14Button.Text = "14";
+            this.card14Button.UseVisualStyleBackColor = true;
+            // 
+            // card15Button
+            // 
+            this.card15Button.Location = new System.Drawing.Point(728, 472);
+            this.card15Button.Name = "card15Button";
+            this.card15Button.Size = new System.Drawing.Size(30, 60);
+            this.card15Button.TabIndex = 17;
+            this.card15Button.Text = "15";
+            this.card15Button.UseVisualStyleBackColor = true;
+            // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.card15Button);
+            this.Controls.Add(this.card14Button);
+            this.Controls.Add(this.card13Button);
+            this.Controls.Add(this.card12Button);
+            this.Controls.Add(this.card11Button);
+            this.Controls.Add(this.card10Button);
+            this.Controls.Add(this.card9Button);
+            this.Controls.Add(this.card8Button);
+            this.Controls.Add(this.card7Button);
+            this.Controls.Add(this.card6Button);
+            this.Controls.Add(this.card5Button);
+            this.Controls.Add(this.card4Button);
+            this.Controls.Add(this.card3Button);
+            this.Controls.Add(this.card2Button);
+            this.Controls.Add(this.card1Button);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Window";
             this.Text = "Stupide Vautour";
+            this.Load += new System.EventHandler(this.Window_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +322,22 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button card1Button;
+        private System.Windows.Forms.Button card2Button;
+        private System.Windows.Forms.Button card3Button;
+        private System.Windows.Forms.Button card4Button;
+        private System.Windows.Forms.Button card5Button;
+        private System.Windows.Forms.Button card6Button;
+        private System.Windows.Forms.Button card7Button;
+        private System.Windows.Forms.Button card8Button;
+        private System.Windows.Forms.Button card9Button;
+        private System.Windows.Forms.Button card10Button;
+        private System.Windows.Forms.Button card11Button;
+        private System.Windows.Forms.Button card12Button;
+        private System.Windows.Forms.Button card13Button;
+        private System.Windows.Forms.Button card14Button;
+        private System.Windows.Forms.Button card15Button;
     }
 }
 

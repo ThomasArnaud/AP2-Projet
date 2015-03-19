@@ -28,5 +28,20 @@ namespace Projet_AP2
             d.ShowDialog();
 
         }
+
+        private void Window_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

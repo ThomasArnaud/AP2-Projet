@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Projet_AP2
 {
@@ -14,6 +15,11 @@ namespace Projet_AP2
             {
                 return this.cards;
             }
+        }
+
+        public HumanPlayer(Byte number, String name, Color color) : base(number, name, color)
+        {
+
         }
     }
 }
