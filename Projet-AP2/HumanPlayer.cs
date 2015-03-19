@@ -8,6 +8,12 @@ namespace Projet_AP2
 {
     public class HumanPlayer : Player
     {
-
+        public List<Card> Cards
+        {
+            get
+            {
+                return this.cards;
+            }
+        }
     }
 }
