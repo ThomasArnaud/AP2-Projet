@@ -37,7 +37,7 @@ namespace Projet_AP2
             // http://stackoverflow.com/questions/1150646/card-shuffling-in-c-sharp#answer-1150699
             Random r = new Random();
 
-            for(Byte i = (Byte) cards.Count; i > 0; i--)
+            for(int i = cards.Count - 1; i > 0; i--)
             {
                 int k = r.Next(i + 1);
                 Card tmp = cards[i];
@@ -45,9 +45,10 @@ namespace Projet_AP2
                 cards[k] = tmp;
             }
 
+            // Then, put them in the stack
             foreach(Card c in cards)
             {
-                Console.WriteLine("{0}", c.Number);
+                this.deck.Push(c);
             }
         }
     }

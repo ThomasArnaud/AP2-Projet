@@ -14,7 +14,7 @@ namespace Projet_AP2
         protected SByte number;
 
         /// <summary>
-        /// Accessor for a card's number.
+        /// Gets a card's number.
         /// </summary>
         public SByte Number
         {
