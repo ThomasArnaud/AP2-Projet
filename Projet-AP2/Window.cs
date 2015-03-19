@@ -26,6 +26,7 @@ namespace Projet_AP2
         {
             NewGame d = new NewGame();
             d.ShowDialog();
+
         }
     }
 }

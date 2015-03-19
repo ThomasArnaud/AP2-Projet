@@ -16,5 +16,22 @@ namespace Projet_AP2
         {
             InitializeComponent();
         }
+
+        private void playersNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
