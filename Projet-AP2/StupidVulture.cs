@@ -46,6 +46,7 @@ namespace Projet_AP2
             }
 
             // Then, put them in the stack
+            this.deck = new Stack<Card>();
             foreach(Card c in cards)
             {
                 this.deck.Push(c);
