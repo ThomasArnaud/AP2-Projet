@@ -13,6 +13,7 @@ namespace Projet_AP2
     public partial class NewGame : Form
     {
         protected List<ComboBox> computersList;
+
         public NewGame()
         {
             InitializeComponent();
@@ -40,10 +41,49 @@ namespace Projet_AP2
 
         private void playersNumber_ValueChanged(object sender, EventArgs e)
         {
-            for (int i = 0, j = (int)this.playersNumber.Value; i < 4; i++)
+            for (int i = 0, j = (int)this.opponentsNumber.Value; i < 4; i++)
             {
                 this.computersList[i].Enabled = i < j;
             }
+        }
+
+        public String PlayerName
+        {
+            get
+            {
+                return this.playerName.Text;
+            }
+        }
+
+        public Byte OpponentsNumber
+        {
+            get
+            {
+                return (Byte) this.opponentsNumber.Value;
+            }
+        }
+
+        public Byte GetOpponentDifficulty(Byte opponentNumber)
+        {
+            if(opponentNumber < (Byte) this.opponentsNumber.Value)
+            {
+                switch(opponentNumber)
+                {
+                    case 1:
+                        return (Byte) this.difficultyComputer1.SelectedIndex;
+
+                    case 2:
+                        return (Byte)this.difficultyComputer2.SelectedIndex;
+
+                    case 3:
+                        return (Byte)this.difficultyComputer3.SelectedIndex;
+
+                    case 4:
+                        return (Byte)this.difficultyComputer4.SelectedIndex;
+                }
+            }
+
+            return 0;
         }
     }
 }

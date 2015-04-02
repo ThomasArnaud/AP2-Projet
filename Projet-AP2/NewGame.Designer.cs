@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.difficultyComputer1 = new System.Windows.Forms.ComboBox();
-            this.difficultyComputer2 = new System.Windows.Forms.ComboBox();
             this.difficultyComputer3 = new System.Windows.Forms.ComboBox();
             this.difficultyComputer4 = new System.Windows.Forms.ComboBox();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.difficultyComputer2 = new System.Windows.Forms.ComboBox();
             this.playButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.playerName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.playersNumber = new System.Windows.Forms.NumericUpDown();
+            this.opponentsNumber = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playersNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opponentsNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -65,7 +65,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cancelButton, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.playerName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.playersNumber, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.opponentsNumber, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -78,18 +78,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(227, 192);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre d\'adversaires";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -139,6 +127,18 @@
             this.label5.Text = "Ordinateur 4";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre d\'adversaires";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // difficultyComputer1
             // 
             this.difficultyComputer1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -151,19 +151,6 @@
             this.difficultyComputer1.Name = "difficultyComputer1";
             this.difficultyComputer1.Size = new System.Drawing.Size(61, 21);
             this.difficultyComputer1.TabIndex = 6;
-            // 
-            // difficultyComputer2
-            // 
-            this.difficultyComputer2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.difficultyComputer2.FormattingEnabled = true;
-            this.difficultyComputer2.Items.AddRange(new object[] {
-            "facile",
-            "moyen",
-            "difficile"});
-            this.difficultyComputer2.Location = new System.Drawing.Point(118, 78);
-            this.difficultyComputer2.Name = "difficultyComputer2";
-            this.difficultyComputer2.Size = new System.Drawing.Size(61, 21);
-            this.difficultyComputer2.TabIndex = 7;
             // 
             // difficultyComputer3
             // 
@@ -191,17 +178,18 @@
             this.difficultyComputer4.Size = new System.Drawing.Size(61, 21);
             this.difficultyComputer4.TabIndex = 9;
             // 
-            // cancelButton
+            // difficultyComputer2
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(3, 168);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(61, 21);
-            this.cancelButton.TabIndex = 10;
-            this.cancelButton.Text = "Annuler";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.difficultyComputer2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.difficultyComputer2.FormattingEnabled = true;
+            this.difficultyComputer2.Items.AddRange(new object[] {
+            "facile",
+            "moyen",
+            "difficile"});
+            this.difficultyComputer2.Location = new System.Drawing.Point(118, 78);
+            this.difficultyComputer2.Name = "difficultyComputer2";
+            this.difficultyComputer2.Size = new System.Drawing.Size(61, 21);
+            this.difficultyComputer2.TabIndex = 7;
             // 
             // playButton
             // 
@@ -213,6 +201,18 @@
             this.playButton.Text = "Jouer";
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(3, 168);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(61, 21);
+            this.cancelButton.TabIndex = 10;
+            this.cancelButton.Text = "Annuler";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // playerName
             // 
@@ -233,28 +233,28 @@
             this.label6.Text = "Nom du joueur";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // playersNumber
+            // opponentsNumber
             // 
-            this.playersNumber.Location = new System.Drawing.Point(118, 28);
-            this.playersNumber.Maximum = new decimal(new int[] {
+            this.opponentsNumber.Location = new System.Drawing.Point(118, 28);
+            this.opponentsNumber.Maximum = new decimal(new int[] {
             4,
             0,
             0,
             0});
-            this.playersNumber.Minimum = new decimal(new int[] {
+            this.opponentsNumber.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.playersNumber.Name = "playersNumber";
-            this.playersNumber.Size = new System.Drawing.Size(106, 20);
-            this.playersNumber.TabIndex = 14;
-            this.playersNumber.Value = new decimal(new int[] {
+            this.opponentsNumber.Name = "opponentsNumber";
+            this.opponentsNumber.Size = new System.Drawing.Size(106, 20);
+            this.opponentsNumber.TabIndex = 14;
+            this.opponentsNumber.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.playersNumber.ValueChanged += new System.EventHandler(this.playersNumber_ValueChanged);
+            this.opponentsNumber.ValueChanged += new System.EventHandler(this.playersNumber_ValueChanged);
             // 
             // NewGame
             // 
@@ -268,7 +268,7 @@
             this.Text = "NewGame";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.playersNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opponentsNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,6 +289,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.TextBox playerName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown playersNumber;
+        private System.Windows.Forms.NumericUpDown opponentsNumber;
     }
 }
