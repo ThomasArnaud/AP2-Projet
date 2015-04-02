@@ -62,6 +62,14 @@ namespace Projet_AP2
         /// </summary>
         protected List<Byte> cards;
 
+        public List<Byte> Cards
+        {
+            get
+            {
+                return this.cards;
+            }
+        }
+
         /// <summary>
         /// Creates a new player.
         /// </summary>

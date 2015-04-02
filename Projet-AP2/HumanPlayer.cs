@@ -9,14 +9,6 @@ namespace Projet_AP2
 {
     public class HumanPlayer : Player
     {
-        public List<Byte> Cards
-        {
-            get
-            {
-                return this.cards;
-            }
-        }
-
         public HumanPlayer(Byte number, String name, Color color) : base(number, name, color)
         {
 
