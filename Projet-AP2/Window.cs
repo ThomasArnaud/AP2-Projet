@@ -75,6 +75,8 @@ namespace Projet_AP2
                 // Create the game
                 this.stupidVulture = new StupidVulture(playersList);
 
+                this.stupidVulture.drawingNeeded += new DrawingNeededEventHandler(DrawBoard);
+
                 for(int i = 0; i < 15; i++)
                 {
                     buttonsList[i].Visible = true;
@@ -101,6 +103,11 @@ namespace Projet_AP2
             // Then, play the associated card
             this.stupidVulture.Play((Byte) (this.buttonsList.IndexOf(cardButton) + 1));
             this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();
+        }
+
+        protected void DrawBoard(object Sender, EventArgs e)
+        {
+
         }
     }
 }
