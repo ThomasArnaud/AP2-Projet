@@ -52,24 +52,24 @@ namespace Projet_AP2
             if(d.ShowDialog()==System.Windows.Forms.DialogResult.OK)
             {
                 List<Player> playersList = new List<Player>();
-                playersList.Add(new HumanPlayer(1, d.PlayerName, Color.Aquamarine));
+                playersList.Add(new HumanPlayer(0, d.PlayerName, Color.Blue));
 
-                Color[] colorsarray = new Color[3]{Color.Red, Color.Purple, Color.Yellow};
+                Color[] colorsarray = new Color[4]{Color.Red, Color.Purple, Color.Yellow, Color.Green};
 
                 for(byte i = 1; i <= d.OpponentsNumber; i++)
                 {
                     switch(d.GetOpponentDifficulty(i))
                     {
                         case 1:
-                            playersList.Add(new EasyComputer(2, "Ordinateur "+i,colorsarray[i]));
+                            playersList.Add(new EasyComputer(i, "Ordinateur "+i,colorsarray[i-1]));
                             break;
 
                         case 2:
-                            playersList.Add(new MediumComputer(3, "Ordinateur " + i, colorsarray[i]));
+                            playersList.Add(new MediumComputer(i, "Ordinateur " + i, colorsarray[i-1]));
                             break;
 
                         case 3:
-                            playersList.Add(new HardComputer(3, "Ordinateur " + i, colorsarray[i]));
+                            playersList.Add(new HardComputer(i, "Ordinateur " + i, colorsarray[i-1]));
                             break;
                     }
                     
@@ -83,6 +83,7 @@ namespace Projet_AP2
                 }
 
                 this.playerNameLabel.Text = d.PlayerName;
+                this.scoreLabel.Text = "0";
             }
 
         }
@@ -102,6 +103,11 @@ namespace Projet_AP2
             Button cardButton = (Button)sender;
             //Determiner le numéro de la carte  et appel à play à faire
             cardButton.Visible = false;
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

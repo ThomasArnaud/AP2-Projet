@@ -37,6 +37,7 @@
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.playerNameLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.card1Button = new System.Windows.Forms.Button();
             this.card2Button = new System.Windows.Forms.Button();
@@ -53,7 +54,8 @@
             this.card13Button = new System.Windows.Forms.Button();
             this.card14Button = new System.Windows.Forms.Button();
             this.card15Button = new System.Windows.Forms.Button();
-            this.playerNameLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.scoreLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,12 +131,20 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.playerNameLabel});
+            this.playerNameLabel,
+            this.toolStripStatusLabel1,
+            this.scoreLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 540);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // playerNameLabel
+            // 
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(59, 17);
+            this.playerNameLabel.Text = "Anonyme";
             // 
             // pictureBox1
             // 
@@ -302,10 +312,18 @@
             this.card15Button.UseVisualStyleBackColor = true;
             this.card15Button.Click += new System.EventHandler(this.CardButton_Click);
             // 
-            // playerNameLabel
+            // toolStripStatusLabel1
             // 
-            this.playerNameLabel.Name = "playerNameLabel";
-            this.playerNameLabel.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel1.Text = "|";
+            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
+            // scoreLabel
+            // 
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(13, 17);
+            this.scoreLabel.Text = "0";
             // 
             // Window
             // 
@@ -372,6 +390,8 @@
         private System.Windows.Forms.Button card14Button;
         private System.Windows.Forms.Button card15Button;
         private System.Windows.Forms.ToolStripStatusLabel playerNameLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel scoreLabel;
     }
 }
 
