@@ -52,6 +52,7 @@
     <Compile Include="NewGame.Designer.cs">
       <DependentUpon>NewGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pair.cs" />
     <Compile Include="Statistics.cs">
       <SubType>Form</SubType>
     </Compile>

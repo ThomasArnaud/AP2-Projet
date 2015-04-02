@@ -86,5 +86,7 @@ namespace Projet_AP2
             for (Byte i = 1; i <= 15; i++)
                 this.cards.Add(i);
         }
+
+        public abstract Byte Play();
     }
 }

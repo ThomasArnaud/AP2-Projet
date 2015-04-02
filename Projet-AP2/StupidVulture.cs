@@ -54,12 +54,56 @@ namespace Projet_AP2
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Play()
+        public void Play(Byte card)
         {
+            // Create the list of pairs
+            List<Pair<Player, Byte>> pairsList = new List<Pair<Player,byte>>();
 
+            // Associate the card with the human player and remove it from their deck
+            pairsList.Add(new Pair<Player, Byte>(this.players[0], card));
+            this.players[0].Cards.Remove(card);
+
+            // Get the computers' card and remove it from their deck
+            for(int i = 1; i < this.players.Count; i++)
+            {
+                pairsList.Add(new Pair<Player, Byte>(this.players[i], this.players[i].Play()));
+                this.players[i].Cards.Remove(pairsList[i].Second);
+            }
+
+            // Then, compare them
+            // 1.   Go through the list once to remove the ones which are equal
+            // 2.1. Get the card with the most value representing the winner of the mouse card
+            // 2.2. Get the card with the least value representing the winner of the vulture card
+            List<Byte> usedCards = new List<Byte>();
+
+            foreach(Pair<Player, Byte> pair in pairsList)
+            {
+                if(usedCards.Contains(pair.Second))
+                {
+                    pairsList.RemoveAll(x => x.Second == pair.Second);
+                }
+                else
+                {
+                    usedCards.Add(pair.Second);
+                }
+            }
+
+            if(pairsList.Count > 0)
+            {
+                if(this.deck.Peek() > 0)
+                {
+                    // Search the highest card
+                }
+                else
+                {
+                    // Search the lowest card
+                }
+            }
+            else
+            {
+                // Nobody can win the card so just ignore it
+                this.deck.Pop();
+            }
         }
     }
 }

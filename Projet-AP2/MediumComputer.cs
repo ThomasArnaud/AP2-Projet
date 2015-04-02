@@ -13,5 +13,10 @@ namespace Projet_AP2
         {
 
         }
+
+        public override Byte Play()
+        {
+            return 0;
+        }
     }
 }
