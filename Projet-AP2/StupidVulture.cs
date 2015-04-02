@@ -46,6 +46,8 @@ namespace Projet_AP2
             }
 
             // Then, put them in the stack
+            this.deck = new Stack<SByte>();
+
             foreach (SByte c in cards)
             {
                 this.deck.Push(c);
