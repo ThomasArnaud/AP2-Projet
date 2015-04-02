@@ -53,7 +53,9 @@
             this.card13Button = new System.Windows.Forms.Button();
             this.card14Button = new System.Windows.Forms.Button();
             this.card15Button = new System.Windows.Forms.Button();
+            this.playerNameLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +128,8 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.playerNameLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 540);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
@@ -143,7 +147,7 @@
             // card1Button
             // 
             this.card1Button.Location = new System.Drawing.Point(28, 472);
-            this.card1Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card1Button.Margin = new System.Windows.Forms.Padding(0);
             this.card1Button.Name = "card1Button";
             this.card1Button.Size = new System.Drawing.Size(30, 60);
             this.card1Button.TabIndex = 3;
@@ -154,7 +158,7 @@
             // card2Button
             // 
             this.card2Button.Location = new System.Drawing.Point(78, 472);
-            this.card2Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card2Button.Margin = new System.Windows.Forms.Padding(0);
             this.card2Button.Name = "card2Button";
             this.card2Button.Size = new System.Drawing.Size(30, 60);
             this.card2Button.TabIndex = 4;
@@ -165,7 +169,7 @@
             // card3Button
             // 
             this.card3Button.Location = new System.Drawing.Point(128, 472);
-            this.card3Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card3Button.Margin = new System.Windows.Forms.Padding(0);
             this.card3Button.Name = "card3Button";
             this.card3Button.Size = new System.Drawing.Size(30, 60);
             this.card3Button.TabIndex = 5;
@@ -176,7 +180,7 @@
             // card4Button
             // 
             this.card4Button.Location = new System.Drawing.Point(178, 472);
-            this.card4Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card4Button.Margin = new System.Windows.Forms.Padding(0);
             this.card4Button.Name = "card4Button";
             this.card4Button.Size = new System.Drawing.Size(30, 60);
             this.card4Button.TabIndex = 6;
@@ -187,7 +191,7 @@
             // card5Button
             // 
             this.card5Button.Location = new System.Drawing.Point(228, 472);
-            this.card5Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card5Button.Margin = new System.Windows.Forms.Padding(0);
             this.card5Button.Name = "card5Button";
             this.card5Button.Size = new System.Drawing.Size(30, 60);
             this.card5Button.TabIndex = 7;
@@ -198,7 +202,7 @@
             // card6Button
             // 
             this.card6Button.Location = new System.Drawing.Point(278, 472);
-            this.card6Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card6Button.Margin = new System.Windows.Forms.Padding(0);
             this.card6Button.Name = "card6Button";
             this.card6Button.Size = new System.Drawing.Size(30, 60);
             this.card6Button.TabIndex = 8;
@@ -209,7 +213,7 @@
             // card7Button
             // 
             this.card7Button.Location = new System.Drawing.Point(328, 472);
-            this.card7Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card7Button.Margin = new System.Windows.Forms.Padding(0);
             this.card7Button.Name = "card7Button";
             this.card7Button.Size = new System.Drawing.Size(30, 60);
             this.card7Button.TabIndex = 9;
@@ -290,13 +294,18 @@
             // card15Button
             // 
             this.card15Button.Location = new System.Drawing.Point(728, 472);
-            this.card15Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.card15Button.Margin = new System.Windows.Forms.Padding(0);
             this.card15Button.Name = "card15Button";
             this.card15Button.Size = new System.Drawing.Size(30, 60);
             this.card15Button.TabIndex = 17;
             this.card15Button.Text = "15";
             this.card15Button.UseVisualStyleBackColor = true;
             this.card15Button.Click += new System.EventHandler(this.CardButton_Click);
+            // 
+            // playerNameLabel
+            // 
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // Window
             // 
@@ -327,6 +336,8 @@
             this.Load += new System.EventHandler(this.Window_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -360,6 +371,7 @@
         private System.Windows.Forms.Button card13Button;
         private System.Windows.Forms.Button card14Button;
         private System.Windows.Forms.Button card15Button;
+        private System.Windows.Forms.ToolStripStatusLabel playerNameLabel;
     }
 }
 

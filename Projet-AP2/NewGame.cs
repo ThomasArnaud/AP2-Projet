@@ -29,6 +29,20 @@ namespace Projet_AP2
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            if (this.playerName.Text.Length == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < computersList.Count; i++)
+            {
+                if (computersList[i].Enabled == true && computersList[i].SelectedIndex == -1)
+                {
+                    return;
+                }
+            }
+                
+
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Close();
         }
