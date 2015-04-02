@@ -70,6 +70,21 @@ namespace Projet_AP2
             }
         }
 
+        protected SByte score;
+
+        public SByte Score
+        {
+            get
+            {
+                return this.score;
+            }
+
+            set
+            {
+                this.score = value;
+            }
+        }
+
         /// <summary>
         /// Creates a new player.
         /// </summary>
