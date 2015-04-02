@@ -13,9 +13,32 @@ namespace Projet_AP2
     public partial class Window : Form
     {
         protected StupidVulture stupidVulture;
+
+        protected List<Button> buttonsList;
         public Window()
         {
             InitializeComponent();
+            this.buttonsList = new List<Button>();
+            buttonsList.Add(card1Button);
+            buttonsList.Add(card2Button);
+            buttonsList.Add(card3Button);
+            buttonsList.Add(card4Button);
+            buttonsList.Add(card5Button);
+            buttonsList.Add(card6Button);
+            buttonsList.Add(card7Button);
+            buttonsList.Add(card8Button);
+            buttonsList.Add(card9Button);
+            buttonsList.Add(card10Button);
+            buttonsList.Add(card11Button);
+            buttonsList.Add(card12Button);
+            buttonsList.Add(card13Button);
+            buttonsList.Add(card14Button);
+            buttonsList.Add(card15Button);
+
+            for(int i = 0; i < 15; i++)
+            {
+                buttonsList[i].Visible = false;
+            }
         }
 
         private void jeuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,6 +76,11 @@ namespace Projet_AP2
                         
                 }
                 StupidVulture stupidVulture = new StupidVulture(playersList);
+
+                for(int i = 0; i < 15; i++)
+                {
+                    buttonsList[i].Visible = true;
+                }
             }
 
         }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stupideVautourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +36,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.card1Button = new System.Windows.Forms.Button();
             this.card2Button = new System.Windows.Forms.Button();
@@ -67,14 +67,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 540);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // jeuToolStripMenuItem
             // 
@@ -123,14 +115,22 @@
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
             this.aideToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 540);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(784, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // pictureBox1
             // 
@@ -143,6 +143,7 @@
             // card1Button
             // 
             this.card1Button.Location = new System.Drawing.Point(28, 472);
+            this.card1Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card1Button.Name = "card1Button";
             this.card1Button.Size = new System.Drawing.Size(30, 60);
             this.card1Button.TabIndex = 3;
@@ -153,6 +154,7 @@
             // card2Button
             // 
             this.card2Button.Location = new System.Drawing.Point(78, 472);
+            this.card2Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card2Button.Name = "card2Button";
             this.card2Button.Size = new System.Drawing.Size(30, 60);
             this.card2Button.TabIndex = 4;
@@ -163,6 +165,7 @@
             // card3Button
             // 
             this.card3Button.Location = new System.Drawing.Point(128, 472);
+            this.card3Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card3Button.Name = "card3Button";
             this.card3Button.Size = new System.Drawing.Size(30, 60);
             this.card3Button.TabIndex = 5;
@@ -173,6 +176,7 @@
             // card4Button
             // 
             this.card4Button.Location = new System.Drawing.Point(178, 472);
+            this.card4Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card4Button.Name = "card4Button";
             this.card4Button.Size = new System.Drawing.Size(30, 60);
             this.card4Button.TabIndex = 6;
@@ -183,6 +187,7 @@
             // card5Button
             // 
             this.card5Button.Location = new System.Drawing.Point(228, 472);
+            this.card5Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card5Button.Name = "card5Button";
             this.card5Button.Size = new System.Drawing.Size(30, 60);
             this.card5Button.TabIndex = 7;
@@ -193,6 +198,7 @@
             // card6Button
             // 
             this.card6Button.Location = new System.Drawing.Point(278, 472);
+            this.card6Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card6Button.Name = "card6Button";
             this.card6Button.Size = new System.Drawing.Size(30, 60);
             this.card6Button.TabIndex = 8;
@@ -203,6 +209,7 @@
             // card7Button
             // 
             this.card7Button.Location = new System.Drawing.Point(328, 472);
+            this.card7Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card7Button.Name = "card7Button";
             this.card7Button.Size = new System.Drawing.Size(30, 60);
             this.card7Button.TabIndex = 9;
@@ -283,6 +290,7 @@
             // card15Button
             // 
             this.card15Button.Location = new System.Drawing.Point(728, 472);
+            this.card15Button.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.card15Button.Name = "card15Button";
             this.card15Button.Size = new System.Drawing.Size(30, 60);
             this.card15Button.TabIndex = 17;
