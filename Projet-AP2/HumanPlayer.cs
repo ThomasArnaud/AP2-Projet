@@ -9,7 +9,7 @@ namespace Projet_AP2
 {
     public class HumanPlayer : Player
     {
-        public List<Card> Cards
+        public List<Byte> Cards
         {
             get
             {

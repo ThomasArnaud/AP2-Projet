@@ -60,7 +60,7 @@ namespace Projet_AP2
         /// <summary>
         /// Represents the player's cards.
         /// </summary>
-        protected List<Card> cards;
+        protected List<Byte> cards;
 
         /// <summary>
         /// Creates a new player.
@@ -73,10 +73,10 @@ namespace Projet_AP2
             this.number = number;
             this.name = name;
             this.color = color;
-            this.cards = new List<Card>();
+            this.cards = new List<Byte>();
 
-            for(SByte i = 1; i <= 15; i++)
-                this.cards.Add(new Card(i));
+            for (Byte i = 1; i <= 15; i++)
+                this.cards.Add(i);
         }
     }
 }

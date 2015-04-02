@@ -16,7 +16,7 @@ namespace Projet_AP2
         /// <summary>
         /// Represents the deck of card which are hidden.
         /// </summary>
-        protected Stack<Card> deck;
+        protected Stack<SByte> deck;
 
         /// <summary>
         /// Creates a new game of Stupid Vulture.
@@ -27,11 +27,11 @@ namespace Projet_AP2
             this.players = players;
 
             // Create the deck of cards
-            List<Card> cards = new List<Card>();
+            List<SByte> cards = new List<SByte>();
             
             for(SByte i = -5; i <= 15; i++)
                 if(i != 0)
-                    cards.Add(new Card(i));
+                    cards.Add(i);
 
             // Shuffle 'em
             // http://stackoverflow.com/questions/1150646/card-shuffling-in-c-sharp#answer-1150699
@@ -40,16 +40,24 @@ namespace Projet_AP2
             for(int i = cards.Count - 1; i > 0; i--)
             {
                 int k = r.Next(i + 1);
-                Card tmp = cards[i];
+                SByte tmp = cards[i];
                 cards[i] = cards[k];
                 cards[k] = tmp;
             }
 
             // Then, put them in the stack
-            foreach(Card c in cards)
+            foreach (SByte c in cards)
             {
                 this.deck.Push(c);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Play()
+        {
+
         }
     }
 }
