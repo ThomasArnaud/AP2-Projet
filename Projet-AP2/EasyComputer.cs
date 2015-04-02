@@ -16,7 +16,8 @@ namespace Projet_AP2
 
         public override Byte Play()
         {
-            return 0;
+            Random rnd = new Random();
+            return this.cards[rnd.Next(this.cards.Count)];
         }
     }
 }
