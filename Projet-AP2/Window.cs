@@ -81,6 +81,8 @@ namespace Projet_AP2
                 {
                     buttonsList[i].Visible = true;
                 }
+
+                this.playerNameLabel.Text = d.PlayerName;
             }
 
         }
