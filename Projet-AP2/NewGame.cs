@@ -65,7 +65,7 @@ namespace Projet_AP2
 
         public Byte GetOpponentDifficulty(Byte opponentNumber)
         {
-            if(opponentNumber < (Byte) this.opponentsNumber.Value)
+            if(opponentNumber >= 1 && opponentNumber <= (Byte) this.opponentsNumber.Value)
             {
                 switch(opponentNumber)
                 {

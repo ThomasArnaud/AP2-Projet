@@ -12,6 +12,7 @@ namespace Projet_AP2
 {
     public partial class Window : Form
     {
+        protected StupidVulture stupidVulture;
         public Window()
         {
             InitializeComponent();
@@ -25,7 +26,34 @@ namespace Projet_AP2
         private void stupideVautourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame d = new NewGame();
-            d.ShowDialog();
+            if(d.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+            {
+                List<Player> playersList = new List<Player>();
+                playersList.Add(new HumanPlayer(1, d.PlayerName, Color.Aquamarine));
+
+                Color[] colorsarray = new Color[3]{Color.Red, Color.Purple, Color.Yellow};
+
+                for(byte i = 1; i <= d.OpponentsNumber; i++)
+                {
+                    switch(d.GetOpponentDifficulty(i))
+                    {
+                        case 1:
+                            playersList.Add(new EasyComputer(2, "Ordinateur "+i,colorsarray[i]));
+                            break;
+
+                        case 2:
+                            playersList.Add(new MediumComputer(3, "Ordinateur " + i, colorsarray[i]));
+                            break;
+
+                        case 3:
+                            playersList.Add(new HardComputer(3, "Ordinateur " + i, colorsarray[i]));
+                            break;
+                    }
+                    
+                        
+                }
+                StupidVulture stupidVulture = new StupidVulture(playersList);
+            }
 
         }
 
