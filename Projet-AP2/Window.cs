@@ -41,55 +41,49 @@ namespace Projet_AP2
             }
         }
 
-        private void jeuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void stupideVautourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame d = new NewGame();
             if(d.ShowDialog()==System.Windows.Forms.DialogResult.OK)
             {
+                // Create the players
                 List<Player> playersList = new List<Player>();
                 playersList.Add(new HumanPlayer(0, d.PlayerName, Color.Blue));
 
-                Color[] colorsarray = new Color[4]{Color.Red, Color.Purple, Color.Yellow, Color.Green};
+                Color[] colorsArray = new Color[4]{Color.Red, Color.Purple, Color.Yellow, Color.Green};
 
                 for(byte i = 1; i <= d.OpponentsNumber; i++)
                 {
                     switch(d.GetOpponentDifficulty(i))
                     {
                         case 1:
-                            playersList.Add(new EasyComputer(i, "Ordinateur "+i,colorsarray[i-1]));
+                            playersList.Add(new EasyComputer((Byte) (i - 1), "Ordinateur " + i, colorsArray[i-1]));
                             break;
 
                         case 2:
-                            playersList.Add(new MediumComputer(i, "Ordinateur " + i, colorsarray[i-1]));
+                            playersList.Add(new MediumComputer((Byte)(i - 1), "Ordinateur " + i, colorsArray[i - 1]));
                             break;
 
                         case 3:
-                            playersList.Add(new HardComputer(i, "Ordinateur " + i, colorsarray[i-1]));
+                            playersList.Add(new HardComputer((Byte)(i - 1), "Ordinateur " + i, colorsArray[i - 1]));
                             break;
                     }
                     
                         
                 }
-                StupidVulture stupidVulture = new StupidVulture(playersList);
+
+                // Create the game
+                this.stupidVulture = new StupidVulture(playersList);
 
                 for(int i = 0; i < 15; i++)
                 {
                     buttonsList[i].Visible = true;
                 }
 
+                // Initialize the interface
                 this.playerNameLabel.Text = d.PlayerName;
                 this.scoreLabel.Text = "0";
             }
-
-        }
-
-        private void Window_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -100,14 +94,13 @@ namespace Projet_AP2
 
         private void CardButton_Click(object sender, EventArgs e)
         {
+            // Determine which button was clicked
             Button cardButton = (Button)sender;
-            //Determiner le numéro de la carte  et appel à play à faire
             cardButton.Visible = false;
-        }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
+            // Then, play the associated card
+            this.stupidVulture.Play((Byte) (this.buttonsList.IndexOf(cardButton) + 1));
+            this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();
         }
     }
 }

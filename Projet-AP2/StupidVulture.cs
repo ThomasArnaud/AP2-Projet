@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Projet_AP2
 {
@@ -12,6 +13,14 @@ namespace Projet_AP2
         /// Represents the list of currently playing players.
         /// </summary>
         protected List<Player> players;
+
+        public List<Player> Players
+        {
+            get
+            {
+                return this.players;
+            }
+        }
 
         /// <summary>
         /// Represents the deck of card which are hidden.
@@ -70,6 +79,10 @@ namespace Projet_AP2
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
+            // DEBUG
+            Console.WriteLine(pairsList);
+            // DEBUG
+
             // Then, compare them
             // 1.   Go through the list once to remove the ones which are equal
             // 2.1. Get the card with the most value representing the winner of the mouse card
@@ -93,16 +106,57 @@ namespace Projet_AP2
                 if(this.deck.Peek() > 0)
                 {
                     // Search the highest card
+                    Byte highestIndex = 0;
+
+                    for(Byte i = 1; i < pairsList.Count; i++)
+                        if(pairsList[i].Second > pairsList[highestIndex].Second)
+                            highestIndex = i;
+                    
+                    // And add the mouse card to the player
+                    pairsList[highestIndex].First.Score += this.deck.Pop();
                 }
                 else
                 {
                     // Search the lowest card
+                    Byte lowestIndex = 0;
+
+                    for (Byte i = 1; i < pairsList.Count; i++)
+                        if (pairsList[i].Second < pairsList[lowestIndex].Second)
+                            lowestIndex = i;
+
+                    // And add the mouse card to the player
+                    pairsList[lowestIndex].First.Score += this.deck.Pop();
                 }
             }
             else
             {
                 // Nobody can win the card so just ignore it
                 this.deck.Pop();
+            }
+
+            // Is the game over?
+            if(this.deck.Count == 0)
+            {
+                Byte highestScoreIndex = 0;
+
+                for(Byte i = 1; i < this.players.Count; i++)
+                    if(this.players[highestScoreIndex].Score > this.players[i].Score)
+                        highestScoreIndex = i;
+
+                Boolean isDraw = this.players.FindAll(x => x.Score == this.players[highestScoreIndex].Score).Count > 1;
+
+                if(this.players[0].Score == this.players[highestScoreIndex].Score && !isDraw)
+                {
+                    MessageBox.Show("Vous avez gagné !", "Victoire", MessageBoxButtons.OK);
+                }
+                else if(this.players[0].Score == this.players[highestScoreIndex].Score)
+                {
+                    MessageBox.Show("C'est une égalité parfaite !", "Match nul", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Perdu pauv' tocard !", "Défaite", MessageBoxButtons.OK);
+                }
             }
         }
     }

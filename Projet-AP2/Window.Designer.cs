@@ -38,6 +38,8 @@
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.playerNameLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.scoreLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.card1Button = new System.Windows.Forms.Button();
             this.card2Button = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.card13Button = new System.Windows.Forms.Button();
             this.card14Button = new System.Windows.Forms.Button();
             this.card15Button = new System.Windows.Forms.Button();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.scoreLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +81,6 @@
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.jeuToolStripMenuItem.Text = "Partie";
-            this.jeuToolStripMenuItem.Click += new System.EventHandler(this.jeuToolStripMenuItem_Click);
             // 
             // stupideVautourToolStripMenuItem
             // 
@@ -145,6 +144,18 @@
             this.playerNameLabel.Name = "playerNameLabel";
             this.playerNameLabel.Size = new System.Drawing.Size(59, 17);
             this.playerNameLabel.Text = "Anonyme";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel1.Text = "|";
+            // 
+            // scoreLabel
+            // 
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(13, 17);
+            this.scoreLabel.Text = "0";
             // 
             // pictureBox1
             // 
@@ -312,19 +323,6 @@
             this.card15Button.UseVisualStyleBackColor = true;
             this.card15Button.Click += new System.EventHandler(this.CardButton_Click);
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel1.Text = "|";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
-            // 
-            // scoreLabel
-            // 
-            this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(13, 17);
-            this.scoreLabel.Text = "0";
-            // 
             // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,7 +349,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Window";
             this.Text = "Stupide Vautour";
-            this.Load += new System.EventHandler(this.Window_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
