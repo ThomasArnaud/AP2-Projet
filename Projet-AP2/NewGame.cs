@@ -84,16 +84,16 @@ namespace Projet_AP2
                 switch(opponentNumber)
                 {
                     case 1:
-                        return (Byte) this.difficultyComputer1.SelectedIndex;
+                        return (Byte)(this.difficultyComputer1.SelectedIndex + 1);
 
                     case 2:
-                        return (Byte)this.difficultyComputer2.SelectedIndex;
+                        return (Byte)(this.difficultyComputer2.SelectedIndex + 1);
 
                     case 3:
-                        return (Byte)this.difficultyComputer3.SelectedIndex;
+                        return (Byte)(this.difficultyComputer3.SelectedIndex + 1);
 
                     case 4:
-                        return (Byte)this.difficultyComputer4.SelectedIndex;
+                        return (Byte)(this.difficultyComputer4.SelectedIndex + 1);
                 }
             }
 

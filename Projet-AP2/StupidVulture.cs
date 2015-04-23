@@ -66,7 +66,7 @@ namespace Projet_AP2
         public void Play(Byte card)
         {
             // Create the list of pairs
-            List<Pair<Player, Byte>> pairsList = new List<Pair<Player,byte>>();
+            List<Pair<Player, Byte>> pairsList = new List<Pair<Player, Byte>>();
 
             // Associate the card with the human player and remove it from their deck
             pairsList.Add(new Pair<Player, Byte>(this.players[0], card));
@@ -80,7 +80,8 @@ namespace Projet_AP2
             }
 
             // DEBUG
-            Console.WriteLine(pairsList);
+            foreach(Pair<Player, Byte> p in pairsList)
+                Console.WriteLine("{0} played {1}.", p.First.Name, p.Second);
             // DEBUG
 
             // Then, compare them
@@ -88,8 +89,9 @@ namespace Projet_AP2
             // 2.1. Get the card with the most value representing the winner of the mouse card
             // 2.2. Get the card with the least value representing the winner of the vulture card
             List<Byte> usedCards = new List<Byte>();
+            List<Pair<Player, Byte>> pairsListCopy = new List<Pair<Player, Byte>>(pairsList);
 
-            foreach(Pair<Player, Byte> pair in pairsList)
+            foreach (Pair<Player, Byte> pair in pairsListCopy)
             {
                 if(usedCards.Contains(pair.Second))
                 {
@@ -113,6 +115,9 @@ namespace Projet_AP2
                             highestIndex = i;
                     
                     // And add the mouse card to the player
+                    // DEBUG
+                    Console.WriteLine("-> {0} earned {1}.", pairsList[highestIndex].First.Name, this.deck.Peek());
+                    // DEBUG
                     pairsList[highestIndex].First.Score += this.deck.Pop();
                 }
                 else
@@ -125,12 +130,18 @@ namespace Projet_AP2
                             lowestIndex = i;
 
                     // And add the mouse card to the player
+                    // DEBUG
+                    Console.WriteLine("-> {0} earned {1}.", pairsList[lowestIndex].First.Name, this.deck.Peek());
+                    // DEBUG
                     pairsList[lowestIndex].First.Score += this.deck.Pop();
                 }
             }
             else
             {
                 // Nobody can win the card so just ignore it
+                // DEBUG
+                Console.WriteLine("-> Nobody earned {0}.", this.deck.Peek());
+                // DEBUG
                 this.deck.Pop();
             }
 

@@ -44,7 +44,8 @@ namespace Projet_AP2
         private void stupideVautourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewGame d = new NewGame();
-            if(d.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+
+            if(d.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 // Create the players
                 List<Player> playersList = new List<Player>();
@@ -57,19 +58,17 @@ namespace Projet_AP2
                     switch(d.GetOpponentDifficulty(i))
                     {
                         case 1:
-                            playersList.Add(new EasyComputer((Byte) (i - 1), "Ordinateur " + i, colorsArray[i-1]));
+                            playersList.Add(new EasyComputer((Byte) i, "Ordinateur " + i, colorsArray[i-1]));
                             break;
 
                         case 2:
-                            playersList.Add(new MediumComputer((Byte)(i - 1), "Ordinateur " + i, colorsArray[i - 1]));
+                            playersList.Add(new MediumComputer((Byte) i, "Ordinateur " + i, colorsArray[i - 1]));
                             break;
 
                         case 3:
-                            playersList.Add(new HardComputer((Byte)(i - 1), "Ordinateur " + i, colorsArray[i - 1]));
+                            playersList.Add(new HardComputer((Byte) i , "Ordinateur " + i, colorsArray[i - 1]));
                             break;
                     }
-                    
-                        
                 }
 
                 // Create the game
