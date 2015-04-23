@@ -32,13 +32,10 @@ Quand ce n'est pas au tour de l'utilisateur, tous les boutons représentant ses 
 sont bloqués. Lorsqu'une carte est jouée, elle n'est plus affichée et le bouton
 associé est caché.
 
-# Evènements
-* `game.creating` : déclenché au début de la création du jeu
-* `game.created` : déclenché à la fin de la création du jeu
-* `game.new_card` : déclenché lorsqu'une nouvelle carte est retournée
-* `player.card_chosen` : déclenché lorsqu'un joueur a choisi une carte
-* 
-
-# Idées
-* S'assurer d'attendre au plus trois secondes en utilisant un [compteur](https://msdn.microsoft.com/fr-fr/library/system.timers.timer%28v=vs.110%29.aspx)
-qui déclenche une sélection au hasard si l'IA met trop de temps
+# Evaluation
+* Qualité de l'interface : ergonomie, facilité d'utilisation
+* Qualité du code : code factorisé, bien commenté
+* Temps de réponse des IAs : < 3s ou < 4s
+* Présence de bugs
+* Qualité du travail de groupe
+* Questions sur le code
