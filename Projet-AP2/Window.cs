@@ -14,6 +14,8 @@ namespace Projet_AP2
     {
         protected StupidVulture stupidVulture;
 
+        protected Bitmap boardImage;
+
         protected List<Button> buttonsList;
         public Window()
         {
@@ -39,6 +41,9 @@ namespace Projet_AP2
             {
                 buttonsList[i].Visible = false;
             }
+
+            this.boardImage = new Bitmap(this.pictureBox.Size.Width, this.pictureBox.Size.Height);
+            this.pictureBox.Image = this.boardImage;
         }
 
         private void stupideVautourToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,7 +78,6 @@ namespace Projet_AP2
 
                 // Create the game
                 this.stupidVulture = new StupidVulture(playersList);
-
                 this.stupidVulture.drawingNeeded += new DrawingNeededEventHandler(DrawBoard);
 
                 for(int i = 0; i < 15; i++)
@@ -84,6 +88,7 @@ namespace Projet_AP2
                 // Initialize the interface
                 this.playerNameLabel.Text = d.PlayerName;
                 this.scoreLabel.Text = "0";
+                this.DrawBoard(this, EventArgs.Empty);
             }
 
         }
@@ -106,20 +111,23 @@ namespace Projet_AP2
 
         protected void DrawBoard(object Sender, EventArgs e)
         {
-            Graphics g = this.pictureBox.CreateGraphics();
-            Pen pen = new Pen(Color.Black, 3);
+            Graphics g = Graphics.FromImage(this.boardImage);
+            Pen pen = new Pen(Color.Blue, 1.0F);
             g.Clear(Color.Transparent);
-            Console.WriteLine("Test du dessin");
 
             if(e != EventArgs.Empty)
             {
-                g.DrawRectangle(pen, 100, 100, 10, 10);
+                Console.WriteLine("Test du dessin 1");
+                g.DrawRectangle(pen, 100.0F, 100.0F, 10.0F, 10.0F);
             }
             else
             {
-                g.DrawRectangle(pen,100,100,10,10);
+                Console.WriteLine("Test du dessin 2"); 
+                g.DrawRectangle(pen, 100.0F, 100.0F, 10.0F, 10.0F);
             }
 
+            pen.Dispose();
+            g.Dispose();
         }
     }
 }

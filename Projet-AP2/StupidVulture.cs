@@ -72,9 +72,6 @@ namespace Projet_AP2
             {
                 this.deck.Push(c);
             }
-
-            // Draw the gameboard
-            this.OnDrawingNeeded(EventArgs.Empty);
         }
 
         public void Play(Byte card)
@@ -189,7 +186,7 @@ namespace Projet_AP2
             }
         }
 
-        protected void OnDrawingNeeded(EventArgs e)
+        protected virtual void OnDrawingNeeded(EventArgs e)
         {
             if(this.drawingNeeded != null)
             {
