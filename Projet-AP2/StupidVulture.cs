@@ -28,6 +28,14 @@ namespace Projet_AP2
         /// </summary>
         protected Stack<SByte> deck;
 
+        public SByte CardOnTop
+        {
+            get
+            {
+                return this.deck.Count > 0 ? this.deck.Peek() : (SByte) 0;
+            }
+        }
+
         public event DrawingNeededEventHandler drawingNeeded;
 
         /// <summary>
