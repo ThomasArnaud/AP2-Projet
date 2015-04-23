@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
+    public delegate void DrawingNeededEventHandler(object Sender, EventArgs e);
     public class StupidVulture
     {
         /// <summary>
@@ -26,6 +27,8 @@ namespace Projet_AP2
         /// Represents the deck of card which are hidden.
         /// </summary>
         protected Stack<SByte> deck;
+
+        public event DrawingNeededEventHandler drawingNeeded;
 
         /// <summary>
         /// Creates a new game of Stupid Vulture.
@@ -61,6 +64,9 @@ namespace Projet_AP2
             {
                 this.deck.Push(c);
             }
+
+            // Draw the gameboard
+            this.OnDrawingNeeded(EventArgs.Empty);
         }
 
         public void Play(Byte card)
@@ -168,6 +174,14 @@ namespace Projet_AP2
                 {
                     MessageBox.Show("Perdu pauv' tocard !", "Défaite", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        protected void OnDrawingNeeded(EventArgs e)
+        {
+            if(this.drawingNeeded != null)
+            {
+                this.drawingNeeded(this, e);
             }
         }
     }
