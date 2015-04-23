@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputerPlayer.cs" />
+    <Compile Include="DrawingNeededEventArgs.cs" />
     <Compile Include="EasyComputer.cs" />
     <Compile Include="NewGame.cs">
       <SubType>Form</SubType>

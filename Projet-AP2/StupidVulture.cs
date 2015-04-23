@@ -7,7 +7,8 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public delegate void DrawingNeededEventHandler(object Sender, EventArgs e);
+    public delegate void DrawingNeededEventHandler(object Sender, DrawingNeededEventArgs e);
+
     public class StupidVulture
     {
         /// <summary>
@@ -90,10 +91,9 @@ namespace Projet_AP2
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
-            // DEBUG
-            foreach(Pair<Player, Byte> p in pairsList)
-                Console.WriteLine("{0} played {1}.", p.First.Name, p.Second);
-            // DEBUG
+            DrawingNeededEventArgs args = new DrawingNeededEventArgs();
+            args.Cards = pairsList;
+            this.OnDrawingNeeded(args);
 
             // Then, compare them
             // 1.   Go through the list once to remove the ones which are equal
@@ -186,7 +186,7 @@ namespace Projet_AP2
             }
         }
 
-        protected virtual void OnDrawingNeeded(EventArgs e)
+        protected virtual void OnDrawingNeeded(DrawingNeededEventArgs e)
         {
             if(this.drawingNeeded != null)
             {
