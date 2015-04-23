@@ -16,7 +16,7 @@ namespace Projet_AP2
             this.random = new Random((int) DateTime.Now.Ticks & 0x0000FFFF + this.number);
         }
 
-        public override Byte Play()
+        public override Byte Play(SByte deckCard)
         {
             return this.cards[this.random.Next(this.cards.Count)];
         }

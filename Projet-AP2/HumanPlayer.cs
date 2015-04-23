@@ -11,10 +11,9 @@ namespace Projet_AP2
     {
         public HumanPlayer(Byte number, String name, Color color) : base(number, name, color)
         {
-
         }
 
-        public override Byte Play()
+        public override Byte Play(SByte deckCard)
         {
             throw new NotImplementedException("This method shouldn't be called.");
         }

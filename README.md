@@ -32,6 +32,20 @@ Quand ce n'est pas au tour de l'utilisateur, tous les boutons représentant ses 
 sont bloqués. Lorsqu'une carte est jouée, elle n'est plus affichée et le bouton
 associé est caché.
 
+# Intelligences artificielle
+## Facile
+* Joue aléatoirement
+* Restriction des choix possibles de carte en fonction de la carte jouée
+
+## Moyenne
+* Cherche à gagner la carte à partir d'un certain seuil, sinon, jeu aléatoire dans les cartes moyennes
+* Cherche à ne pas gagner les cartes négatives
+* Algorithme glouton : meilleure solution locale
+
+## Difficile
+* Monte-carlo + UCB ?
+* Algorithme brutal
+
 # Evaluation
 * Qualité de l'interface : ergonomie, facilité d'utilisation
 * Qualité du code : code factorisé, bien commenté

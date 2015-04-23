@@ -102,6 +102,6 @@ namespace Projet_AP2
                 this.cards.Add(i);
         }
 
-        public abstract Byte Play();
+        public abstract Byte Play(SByte deckCard);
     }
 }

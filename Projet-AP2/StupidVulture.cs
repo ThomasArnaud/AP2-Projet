@@ -87,7 +87,7 @@ namespace Projet_AP2
             // Get the computers' card and remove it from their deck
             for(int i = 1; i < this.players.Count; i++)
             {
-                pairsList.Add(new Pair<Player, Byte>(this.players[i], this.players[i].Play()));
+                pairsList.Add(new Pair<Player, Byte>(this.players[i], this.players[i].Play(this.deck.Peek())));
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
