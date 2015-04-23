@@ -9,15 +9,16 @@ namespace Projet_AP2
 {
     public class EasyComputer : ComputerPlayer
     {
+        protected Random random;
+
         public EasyComputer(Byte number, String name, Color color) : base(number, name, color)
         {
-            
+            this.random = new Random((int) DateTime.Now.Ticks & 0x0000FFFF + this.number);
         }
 
         public override Byte Play()
         {
-            Random rnd = new Random((int) DateTime.Now.Ticks & 0x0000FFFF + this.number);
-            return this.cards[rnd.Next(this.cards.Count)];
+            return this.cards[this.random.Next(this.cards.Count)];
         }
     }
 }
