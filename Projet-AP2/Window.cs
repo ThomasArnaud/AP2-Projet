@@ -106,6 +106,19 @@ namespace Projet_AP2
 
         protected void DrawBoard(object Sender, EventArgs e)
         {
+            Graphics g = this.pictureBox.CreateGraphics();
+            Pen pen = new Pen(Color.Black, 3);
+            g.Clear(Color.Transparent);
+            Console.WriteLine("Test du dessin");
+
+            if(e != EventArgs.Empty)
+            {
+                g.DrawRectangle(pen, 100, 100, 10, 10);
+            }
+            else
+            {
+                g.DrawRectangle(pen,100,100,10,10);
+            }
 
         }
     }

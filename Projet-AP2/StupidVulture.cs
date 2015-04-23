@@ -41,7 +41,7 @@ namespace Projet_AP2
             // Create the deck of cards
             List<SByte> cards = new List<SByte>();
             
-            for(SByte i = -5; i <= 15; i++)
+            for(SByte i = -5; i <= 10; i++)
                 if(i != 0)
                     cards.Add(i);
 
@@ -150,6 +150,10 @@ namespace Projet_AP2
                 // DEBUG
                 this.deck.Pop();
             }
+
+            // DEBUG
+            Console.WriteLine("-> Nombre de cartes restantes {0}.", this.deck.Count);
+            // DEBUG
 
             // Is the game over?
             if(this.deck.Count == 0)
