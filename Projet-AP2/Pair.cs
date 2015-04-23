@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_AP2
 {
-    class Pair<M, N>
+    public class Pair<M, N>
     {
         /// <summary>
         /// Represents the first item of the pair.

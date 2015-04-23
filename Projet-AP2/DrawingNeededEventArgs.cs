@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Projet_AP2
 {
-    class DrawingNeededEventArgs : EventArgs
+    public class DrawingNeededEventArgs : EventArgs
     {
-        protected List<Pair<Player, Byte>> cards;
+        protected List<Pair<Player, Byte>> cardsList;
 
         public List<Pair<Player, Byte>> Cards
         {
             get
             {
-                return this.cards;
+                return this.cardsList;
             }
 
             set
             {
-                this.cards = value;
+                this.cardsList = value;
             }
         }
     }

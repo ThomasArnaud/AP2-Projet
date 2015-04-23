@@ -16,6 +16,8 @@ namespace Projet_AP2
 
         protected Bitmap boardImage;
 
+        protected PointF[,] location;
+
         protected List<Button> buttonsList;
         public Window()
         {
@@ -44,6 +46,32 @@ namespace Projet_AP2
 
             this.boardImage = new Bitmap(this.pictureBox.Size.Width, this.pictureBox.Size.Height);
             this.pictureBox.Image = this.boardImage;
+
+            this.location = new PointF[4,5];
+            location[0, 0] = new PointF(369, 353);
+            location[1, 0] = new PointF(369, 353);
+            location[2, 0] = new PointF(369, 353);
+            location[3, 0] = new PointF(369, 353);
+
+            location[0, 1] = new PointF(369, 44);
+            location[1, 1] = new PointF(258, 62);
+            location[2, 1] = new PointF(158, 148);
+            location[3, 1] = new PointF(78, 226);
+
+            location[0, 2] = new PointF(-1, -1);
+            location[1, 2] = new PointF(478, 62);
+            location[2, 2] = new PointF(369, 44);
+            location[3, 2] = new PointF(258, 62);
+
+            location[0, 3] = new PointF(-1, -1);
+            location[1, 3] = new PointF(-1, -1);
+            location[2, 3] = new PointF(578, 148);
+            location[3, 3] = new PointF(478, 62);
+
+            location[0, 4] = new PointF(-1, -1);
+            location[1, 4] = new PointF(-1, -1);
+            location[2, 4] = new PointF(-1, -1);
+            location[3, 4] = new PointF(658, 226);
         }
 
         private void stupideVautourToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,7 +116,7 @@ namespace Projet_AP2
                 // Initialize the interface
                 this.playerNameLabel.Text = d.PlayerName;
                 this.scoreLabel.Text = "0";
-                this.DrawBoard(this, EventArgs.Empty);
+                this.DrawBoard(this, null);
             }
 
         }
@@ -109,21 +137,24 @@ namespace Projet_AP2
             this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();
         }
 
-        protected void DrawBoard(object Sender, EventArgs e)
+        protected void DrawBoard(object Sender, DrawingNeededEventArgs e)
         {
             Graphics g = Graphics.FromImage(this.boardImage);
-            Pen pen = new Pen(Color.Blue, 1.0F);
+            Pen pen = new Pen(Color.Black, 1.0F);
+            Font font = new Font("Arial", 12);
+            SolidBrush brush = new SolidBrush(Color.Black);
+
+            Console.WriteLine("Coucou");
             g.Clear(Color.Transparent);
 
-            if(e != EventArgs.Empty)
+            g.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
+            g.DrawString(this.stupidVulture.CardOnTop.ToString(), font, brush, new PointF(330, 235));
+
+            g.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
+
+            if(e != null)
             {
-                Console.WriteLine("Test du dessin 1");
-                g.DrawRectangle(pen, 100.0F, 100.0F, 10.0F, 10.0F);
-            }
-            else
-            {
-                Console.WriteLine("Test du dessin 2"); 
-                g.DrawRectangle(pen, 100.0F, 100.0F, 10.0F, 10.0F);
+                
             }
 
             pen.Dispose();
