@@ -16,6 +16,11 @@ namespace Projet_AP2
             this.random = new Random((int) DateTime.Now.Ticks & 0x0000FFFF + this.number);
         }
 
+        public EasyComputer(Byte number, String name, Color color, Byte rangeMaximumSize) : this(number, name, color)
+        {
+
+        }
+
         public override Byte Play(SByte deckCard)
         {
             return this.cards[this.random.Next(this.cards.Count)];

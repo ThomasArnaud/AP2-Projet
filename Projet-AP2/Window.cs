@@ -106,7 +106,7 @@ namespace Projet_AP2
 
                 // Create the game
                 this.stupidVulture = new StupidVulture(playersList);
-                this.stupidVulture.drawingNeeded += new DrawingNeededEventHandler(DrawBoard);
+                this.stupidVulture.drawingNeeded += new DrawingNeededEventHandler(this.DrawBoard);
 
                 for(int i = 0; i < 15; i++)
                 {
@@ -144,17 +144,19 @@ namespace Projet_AP2
             Font font = new Font("Arial", 12);
             SolidBrush brush = new SolidBrush(Color.Black);
 
-            Console.WriteLine("Coucou");
-            g.Clear(Color.Transparent);
+            g.Clear(new Color[]{Color.Red, Color.Blue, Color.Green, Color.Yellow, Color.Turquoise, Color.Tomato, Color.SteelBlue}[new Random().Next(7)]);
 
             g.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
             g.DrawString(this.stupidVulture.CardOnTop.ToString(), font, brush, new PointF(330, 235));
-
             g.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
 
             if(e != null)
             {
-                
+                for(byte i = 0; i < e.Cards.Count; i++)
+                {
+                    pen.Color = e.Cards[i].First.Color;
+                    // g.DrawRectangle(pen, this.location[e.Cards.Count - 2, i]);
+                }
             }
 
             pen.Dispose();

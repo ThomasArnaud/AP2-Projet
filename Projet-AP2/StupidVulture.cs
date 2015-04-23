@@ -166,7 +166,7 @@ namespace Projet_AP2
                 Byte highestScoreIndex = 0;
 
                 for(Byte i = 1; i < this.players.Count; i++)
-                    if(this.players[highestScoreIndex].Score > this.players[i].Score)
+                    if(this.players[highestScoreIndex].Score < this.players[i].Score)
                         highestScoreIndex = i;
 
                 Boolean isDraw = this.players.FindAll(x => x.Score == this.players[highestScoreIndex].Score).Count > 1;
