@@ -16,6 +16,9 @@ namespace Projet_AP2
         /// </summary>
         protected List<Player> players;
 
+        /// <summary>
+        /// Gets the list of currently playing players.
+        /// </summary>
         public List<Player> Players
         {
             get
@@ -29,6 +32,9 @@ namespace Projet_AP2
         /// </summary>
         protected Stack<SByte> deck;
 
+        /// <summary>
+        /// Gets the card on top of the deck if there are still cards left, otherwise returns 0.
+        /// </summary>
         public SByte CardOnTop
         {
             get
@@ -37,6 +43,9 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public event DrawingNeededEventHandler drawingNeeded;
 
         /// <summary>
@@ -70,11 +79,13 @@ namespace Projet_AP2
             this.deck = new Stack<SByte>();
 
             foreach (SByte c in cards)
-            {
                 this.deck.Push(c);
-            }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="card"></param>
         public void Play(Byte card)
         {
             // Create the list of pairs
@@ -91,6 +102,7 @@ namespace Projet_AP2
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
+            // Fire an event so that the user knows what everybody played
             DrawingNeededEventArgs args = new DrawingNeededEventArgs();
             args.Cards = pairsList;
             this.OnDrawingNeeded(args);
@@ -186,6 +198,10 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="e"></param>
         protected virtual void OnDrawingNeeded(DrawingNeededEventArgs e)
         {
             if(this.drawingNeeded != null)
