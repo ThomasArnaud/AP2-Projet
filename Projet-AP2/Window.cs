@@ -14,8 +14,6 @@ namespace Projet_AP2
     {
         protected StupidVulture stupidVulture;
 
-        protected Bitmap boardImage;
-
         protected PointF[,] location;
 
         protected List<Button> buttonsList;
@@ -43,9 +41,6 @@ namespace Projet_AP2
             {
                 buttonsList[i].Visible = false;
             }
-
-            this.boardImage = new Bitmap(this.pictureBox.Size.Width, this.pictureBox.Size.Height);
-            this.pictureBox.Image = this.boardImage;
 
             this.location = new PointF[4,5];
             location[0, 0] = new PointF(369, 353);
@@ -139,13 +134,18 @@ namespace Projet_AP2
 
         protected void DrawBoard(object Sender, DrawingNeededEventArgs e)
         {
-            Graphics g = Graphics.FromImage(this.boardImage);
+            Bitmap boardImage = new Bitmap(this.pictureBox.Size.Width, this.pictureBox.Size.Height);
+            Graphics g = Graphics.FromImage(boardImage);
             Pen pen = new Pen(Color.Black, 1.0F);
             Font font = new Font("Arial", 12);
             SolidBrush brush = new SolidBrush(Color.Black);
 
-            g.Clear(new Color[]{Color.Red, Color.Blue, Color.Green, Color.Yellow, Color.Turquoise, Color.Tomato, Color.SteelBlue}[new Random().Next(7)]);
+            this.pictureBox.Image = boardImage;
 
+            // Clear the image first
+            g.Clear(Color.Transparent);
+
+            // Draw the deck
             g.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
             g.DrawString(this.stupidVulture.CardOnTop.ToString(), font, brush, new PointF(330, 235));
             g.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
