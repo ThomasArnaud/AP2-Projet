@@ -38,7 +38,7 @@ associé est caché.
 * Restriction des choix possibles de carte en fonction de la carte jouée
 
 ## Moyenne
-* Cherche à gagner la carte à partir d'un certain seuil, sinon, jeu aléatoire dans les cartes moyennes
+* Cherche à gagner la carte à partir d'un certain seuil en jouant toujours la meilleure, sinon, jeu aléatoire dans les cartes moyennes
 * Cherche à ne pas gagner les cartes négatives
 * Algorithme glouton : meilleure solution locale
 
