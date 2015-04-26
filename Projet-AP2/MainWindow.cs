@@ -51,30 +51,30 @@ namespace Projet_AP2
             // Build a matrix of points representing where to draw the opponents' card
             this.location = new PointF[4,5];
 
-            location[0, 0] = new PointF(369, 353);
-            location[1, 0] = new PointF(369, 353);
-            location[2, 0] = new PointF(369, 353);
-            location[3, 0] = new PointF(369, 353);
+            location[0, 0] = new PointF(369.0F, 353.0F);
+            location[1, 0] = new PointF(369.0F, 353.0F);
+            location[2, 0] = new PointF(369.0F, 353.0F);
+            location[3, 0] = new PointF(369.0F, 353.0F);
 
-            location[0, 1] = new PointF(369, 44);
-            location[1, 1] = new PointF(258, 62);
-            location[2, 1] = new PointF(158, 148);
-            location[3, 1] = new PointF(78, 226);
+            location[0, 1] = new PointF(369.0F, 44.0F);
+            location[1, 1] = new PointF(258.0F, 62.0F);
+            location[2, 1] = new PointF(158.0F, 148.0F);
+            location[3, 1] = new PointF(78.0F, 226.0F);
 
             location[0, 2] = new PointF(-1, -1);
-            location[1, 2] = new PointF(478, 62);
-            location[2, 2] = new PointF(369, 44);
-            location[3, 2] = new PointF(258, 62);
+            location[1, 2] = new PointF(478.0F, 62.0F);
+            location[2, 2] = new PointF(369.0F, 44.0F);
+            location[3, 2] = new PointF(258.0F, 62.0F);
 
             location[0, 3] = new PointF(-1, -1);
             location[1, 3] = new PointF(-1, -1);
-            location[2, 3] = new PointF(578, 148);
-            location[3, 3] = new PointF(478, 62);
+            location[2, 3] = new PointF(578.0F, 148.0F);
+            location[3, 3] = new PointF(478.0F, 62.0F);
 
             location[0, 4] = new PointF(-1, -1);
             location[1, 4] = new PointF(-1, -1);
             location[2, 4] = new PointF(-1, -1);
-            location[3, 4] = new PointF(658, 226);
+            location[3, 4] = new PointF(658.0F, 226.0F);
         }
 
         /// <summary>
@@ -190,49 +190,16 @@ namespace Projet_AP2
             // Draw the players' card if needed
             if(cardsList != null)
             {
-                switch(cardsList.Count)
+                
+                for (int i = 0; i < cardsList.Count; i++)
                 {
-                    case 2:
-                        for (int i = 0; i < cardsList.Count; i++)
-                        {
-                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+                    Console.WriteLine("salut les amis");
+                    SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
 
-                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
-                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
-                        }
-                    break;
-
-                    case 3:
-                        for (int i = 0; i < cardsList.Count; i++)
-                        {
-                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
-
-                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
-                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
-                        }
-                    break;
-
-                    case 4:
-                        for (int i = 0; i < cardsList.Count; i++)
-                        {
-                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
-
-                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
-                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
-                        }
-                    break;
-
-                    case 5:
-                        for (int i = 0; i < cardsList.Count; i++)
-                        {
-                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
-
-                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
-                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
-                        }
-                    break;
-                }
-                    
+                    graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
+                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                        
+                }      
             }
 
             // Dispose of the drawing components
