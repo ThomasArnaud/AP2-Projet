@@ -190,15 +190,13 @@ namespace Projet_AP2
             // Draw the players' card if needed
             if(cardsList != null)
             {
-                
-                for (int i = 0; i < cardsList.Count; i++)
+                for (Byte i = 0; i < cardsList.Count; i++)
                 {
-                    Console.WriteLine("salut les amis");
                     SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+                    pen.Color = cardsList[i].First.Color;
 
-                    graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
-                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
-                        
+                    graphics.DrawRectangle(pen, this.location[cardsList.Count - 2, i].X, this.location[cardsList.Count - 2, i].Y, 50.0F, 100.0F);
+                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(this.location[cardsList.Count - 2, i].X, this.location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 }      
             }
 
@@ -278,7 +276,7 @@ namespace Projet_AP2
         protected void OnTurnEnded(object sender, TurnFinishedEventArgs a)
         {
             // Draw the board with the new card to win
-            this.drawBoard(null, this.stupidVulture.CardOnTop);
+            this.drawBoard(a.Cards, this.stupidVulture.CardOnTop);
 
             // Activate every card button
             for (Byte i = 0; i < this.buttonsList.Count; i++)

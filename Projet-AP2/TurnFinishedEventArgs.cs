@@ -38,11 +38,22 @@ namespace Projet_AP2
             }
         }
 
-        public TurnFinishedEventArgs(Player winner, SByte wonCard, Byte playedCard) : base()
+        protected List<Pair<Player, Byte>> cardsList;
+
+        public List<Pair<Player, Byte>> Cards
+        {
+            get
+            {
+                return this.cardsList;
+            }
+        }
+
+        public TurnFinishedEventArgs(Player winner, SByte wonCard, Byte playedCard, List<Pair<Player, Byte>> cardsList) : base()
         {
             this.winner = winner;
             this.wonCard = wonCard;
             this.playedCard = playedCard;
+            this.cardsList = cardsList;
         }
     }
 }

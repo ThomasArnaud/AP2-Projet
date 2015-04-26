@@ -103,11 +103,6 @@ namespace Projet_AP2
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
-            // DEBUG
-            foreach(Pair<Player, Byte> pair in pairsList)
-                Console.WriteLine("-> {0} played {1}", pair.First.Name, pair.Second);
-            // DEBUG
-
             // Fire beginning of the turn event
             this.turnBegun(new TurnBegunEventArgs(pairsList));
 
@@ -140,16 +135,12 @@ namespace Projet_AP2
                     for(Byte i = 1; i < pairsList.Count; i++)
                         if(pairsList[i].Second > pairsList[highestIndex].Second)
                             highestIndex = i;
-                    
-                    // DEBUG
-                    Console.WriteLine("=> {0} earned {1}.", pairsList[highestIndex].First.Name, this.deck.Peek());
-                    // DEBUG
 
                     // And add the mouse card to the player
                     pairsList[highestIndex].First.Score += this.deck.Peek();
 
                     // Fire the end of turn event
-                    this.turnFinished(new TurnFinishedEventArgs(pairsList[highestIndex].First, this.deck.Pop(), pairsList[highestIndex].Second));
+                    this.turnFinished(new TurnFinishedEventArgs(pairsList[highestIndex].First, this.deck.Pop(), pairsList[highestIndex].Second, pairsListCopy));
                 }
                 else
                 {
@@ -160,30 +151,18 @@ namespace Projet_AP2
                         if (pairsList[i].Second < pairsList[lowestIndex].Second)
                             lowestIndex = i;
 
-                    // DEBUG
-                    Console.WriteLine("=> {0} earned {1}.", pairsList[lowestIndex].First.Name, this.deck.Peek());
-                    // DEBUG
-
                     // And add the vulture card to the player
                     pairsList[lowestIndex].First.Score += this.deck.Peek();
 
                     // Fire the end of turn event
-                    this.turnFinished(new TurnFinishedEventArgs(pairsList[lowestIndex].First, this.deck.Pop(), pairsList[lowestIndex].Second));
+                    this.turnFinished(new TurnFinishedEventArgs(pairsList[lowestIndex].First, this.deck.Pop(), pairsList[lowestIndex].Second, pairsListCopy));
                 }
             }
             else
             {
-                // DEBUG
-                Console.WriteLine("=> Nobody earned {0}.", this.deck.Peek());
-                // DEBUG
-
                 // Nobody can win the card so just ignore it and fire the end of turn event
-                this.turnFinished(new TurnFinishedEventArgs(null, this.deck.Pop(), 0));
+                this.turnFinished(new TurnFinishedEventArgs(null, this.deck.Pop(), 0, pairsListCopy));
             }
-
-            // DEBUG
-            Console.WriteLine("-- Nombre de cartes restantes {0}.", this.deck.Count);
-            // DEBUG
 
             // Is the game over?
             if(this.deck.Count == 0)
