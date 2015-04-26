@@ -38,13 +38,16 @@ associé est caché.
 * Restriction des choix possibles de carte en fonction de la carte jouée
 
 ## Moyenne
-* Cherche à gagner la carte à partir d'un certain seuil en jouant toujours la meilleure, sinon, jeu aléatoire dans les cartes moyennes
-* Cherche à ne pas gagner les cartes négatives
-* Algorithme glouton : meilleure solution locale
+* Algorithme __glouton__ : meilleure solution locale
+* Si la carte est négative, chercher à l'éviter avec des cartes moyennes
+* Si la carte dépasse le seuil, toujours jouer les meilleures cartes
+* Sinon, jouer aléatoirement dans les cartes moyennes
 
 ## Difficile
-* Monte-carlo + UCB ?
-* Algorithme brutal
+* Algorithme __brutal__ : solution optimale
+* Voir algorithme de Monte-carlo et UCB
+* Simuler le restant du jeu dans une méthode récursive de la classe et regarder
+ce qui a la meilleure probabilité de gagner
 
 # Evaluation
 * Qualité de l'interface : ergonomie, facilité d'utilisation
