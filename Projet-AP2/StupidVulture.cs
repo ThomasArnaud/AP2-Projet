@@ -7,10 +7,20 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public delegate void DrawingNeededEventHandler(object Sender, DrawingNeededEventArgs e);
+    public delegate void GameFinishedEventHandler(object Sender, GameFinishedEventArgs e);
+
+    public delegate void TurnBegunEventHandler(object Sender, TurnBegunEventArgs e);
+
+    public delegate void TurnFinishedEventHandler(object Sender, TurnFinishedEventArgs e);
 
     public class StupidVulture
     {
+        public event GameFinishedEventHandler GameFinishedEvent;
+
+        public event TurnBegunEventHandler TurnBegunEvent;
+
+        public event TurnFinishedEventHandler TurnFinishedEvent;
+
         /// <summary>
         /// Represents the list of currently playing players.
         /// </summary>
@@ -42,11 +52,6 @@ namespace Projet_AP2
                 return this.deck.Count > 0 ? this.deck.Peek() : (SByte) 0;
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public event DrawingNeededEventHandler drawingNeeded;
 
         /// <summary>
         /// Creates a new game of Stupid Vulture.
@@ -82,10 +87,6 @@ namespace Projet_AP2
                 this.deck.Push(c);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="card"></param>
         public void Play(Byte card)
         {
             // Create the list of pairs
@@ -102,10 +103,13 @@ namespace Projet_AP2
                 this.players[i].Cards.Remove(pairsList[i].Second);
             }
 
-            // Fire an event so that the user knows what everybody played
-            DrawingNeededEventArgs args = new DrawingNeededEventArgs();
-            args.Cards = pairsList;
-            this.OnDrawingNeeded(args);
+            // DEBUG
+            foreach(Pair<Player, Byte> pair in pairsList)
+                Console.WriteLine("-> {0} played {1}", pair.First.Name, pair.Second);
+            // DEBUG
+
+            // Fire beginning of the turn event
+            this.turnBegun(new TurnBegunEventArgs(pairsList));
 
             // Then, compare them
             // 1.   Go through the list once to remove the ones which are equal
@@ -137,11 +141,15 @@ namespace Projet_AP2
                         if(pairsList[i].Second > pairsList[highestIndex].Second)
                             highestIndex = i;
                     
+                    // DEBUG
+                    Console.WriteLine("=> {0} earned {1}.", pairsList[highestIndex].First.Name, this.deck.Peek());
+                    // DEBUG
+
                     // And add the mouse card to the player
-                    // DEBUG
-                    Console.WriteLine("-> {0} earned {1}.", pairsList[highestIndex].First.Name, this.deck.Peek());
-                    // DEBUG
-                    pairsList[highestIndex].First.Score += this.deck.Pop();
+                    pairsList[highestIndex].First.Score += this.deck.Peek();
+
+                    // Fire the end of turn event
+                    this.turnFinished(new TurnFinishedEventArgs(pairsList[highestIndex].First, this.deck.Pop(), pairsList[highestIndex].Second));
                 }
                 else
                 {
@@ -152,62 +160,74 @@ namespace Projet_AP2
                         if (pairsList[i].Second < pairsList[lowestIndex].Second)
                             lowestIndex = i;
 
-                    // And add the mouse card to the player
                     // DEBUG
-                    Console.WriteLine("-> {0} earned {1}.", pairsList[lowestIndex].First.Name, this.deck.Peek());
+                    Console.WriteLine("=> {0} earned {1}.", pairsList[lowestIndex].First.Name, this.deck.Peek());
                     // DEBUG
-                    pairsList[lowestIndex].First.Score += this.deck.Pop();
+
+                    // And add the vulture card to the player
+                    pairsList[lowestIndex].First.Score += this.deck.Peek();
+
+                    // Fire the end of turn event
+                    this.turnFinished(new TurnFinishedEventArgs(pairsList[lowestIndex].First, this.deck.Pop(), pairsList[lowestIndex].Second));
                 }
             }
             else
             {
-                // Nobody can win the card so just ignore it
                 // DEBUG
-                Console.WriteLine("-> Nobody earned {0}.", this.deck.Peek());
+                Console.WriteLine("=> Nobody earned {0}.", this.deck.Peek());
                 // DEBUG
-                this.deck.Pop();
+
+                // Nobody can win the card so just ignore it and fire the end of turn event
+                this.turnFinished(new TurnFinishedEventArgs(null, this.deck.Pop(), 0));
             }
 
             // DEBUG
-            Console.WriteLine("-> Nombre de cartes restantes {0}.", this.deck.Count);
+            Console.WriteLine("-- Nombre de cartes restantes {0}.", this.deck.Count);
             // DEBUG
 
             // Is the game over?
             if(this.deck.Count == 0)
             {
-                Byte highestScoreIndex = 0;
+                // Build the list of winners
+                List<Player> winnersList = new List<Player>();
+                winnersList.Add(this.players[0]);
+                SByte highestScore = this.players[0].Score;
 
                 for(Byte i = 1; i < this.players.Count; i++)
-                    if(this.players[highestScoreIndex].Score < this.players[i].Score)
-                        highestScoreIndex = i;
+                {
+                    if(this.players[i].Score > highestScore)
+                    {
+                        winnersList.Clear();
+                        winnersList.Add(this.players[i]);
+                        highestScore = this.players[i].Score;
+                    }
+                    else if(this.players[i].Score == highestScore)
+                    {
+                        winnersList.Add(this.players[i]);
+                    }
+                }
 
-                Boolean isDraw = this.players.FindAll(x => x.Score == this.players[highestScoreIndex].Score).Count > 1;
-
-                if(this.players[0].Score == this.players[highestScoreIndex].Score && !isDraw)
-                {
-                    MessageBox.Show("Vous avez gagné !", "Victoire", MessageBoxButtons.OK);
-                }
-                else if(this.players[0].Score == this.players[highestScoreIndex].Score)
-                {
-                    MessageBox.Show("C'est une égalité parfaite !", "Match nul", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    MessageBox.Show("Perdu pauv' tocard !", "Défaite", MessageBoxButtons.OK);
-                }
+                // Fire the end of game event
+                this.gamefinished(new GameFinishedEventArgs(winnersList, highestScore));
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="e"></param>
-        protected virtual void OnDrawingNeeded(DrawingNeededEventArgs e)
+        protected void gamefinished(GameFinishedEventArgs a)
         {
-            if(this.drawingNeeded != null)
-            {
-                this.drawingNeeded(this, e);
-            }
+            if(this.GameFinishedEvent != null)
+                this.GameFinishedEvent(this, a);
+        }
+
+        protected void turnBegun(TurnBegunEventArgs a)
+        {
+            if(this.TurnBegunEvent != null)
+                this.TurnBegunEvent(this, a);
+        }
+
+        protected void turnFinished(TurnFinishedEventArgs a)
+        {
+            if(this.TurnFinishedEvent != null)
+                this.TurnFinishedEvent(this, a);
         }
     }
 }

@@ -144,9 +144,9 @@
             this.difficultyComputer1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficultyComputer1.FormattingEnabled = true;
             this.difficultyComputer1.Items.AddRange(new object[] {
-            "facile",
-            "moyen",
-            "difficile"});
+            "Facile",
+            "Moyen",
+            "Difficile"});
             this.difficultyComputer1.Location = new System.Drawing.Point(118, 53);
             this.difficultyComputer1.Name = "difficultyComputer1";
             this.difficultyComputer1.Size = new System.Drawing.Size(61, 21);
@@ -157,9 +157,9 @@
             this.difficultyComputer3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficultyComputer3.FormattingEnabled = true;
             this.difficultyComputer3.Items.AddRange(new object[] {
-            "facile",
-            "moyen",
-            "difficile"});
+            "Facile",
+            "Moyen",
+            "Difficile"});
             this.difficultyComputer3.Location = new System.Drawing.Point(118, 103);
             this.difficultyComputer3.Name = "difficultyComputer3";
             this.difficultyComputer3.Size = new System.Drawing.Size(61, 21);
@@ -170,9 +170,9 @@
             this.difficultyComputer4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficultyComputer4.FormattingEnabled = true;
             this.difficultyComputer4.Items.AddRange(new object[] {
-            "facile",
-            "moyen",
-            "difficile"});
+            "Facile",
+            "Moyen",
+            "Difficile"});
             this.difficultyComputer4.Location = new System.Drawing.Point(118, 128);
             this.difficultyComputer4.Name = "difficultyComputer4";
             this.difficultyComputer4.Size = new System.Drawing.Size(61, 21);
@@ -183,9 +183,9 @@
             this.difficultyComputer2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.difficultyComputer2.FormattingEnabled = true;
             this.difficultyComputer2.Items.AddRange(new object[] {
-            "facile",
-            "moyen",
-            "difficile"});
+            "Facile",
+            "Moyen",
+            "Difficile"});
             this.difficultyComputer2.Location = new System.Drawing.Point(118, 78);
             this.difficultyComputer2.Name = "difficultyComputer2";
             this.difficultyComputer2.Size = new System.Drawing.Size(61, 21);
@@ -265,7 +265,7 @@
             this.ClientSize = new System.Drawing.Size(251, 216);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NewGame";
-            this.Text = "NewGame";
+            this.Text = "Stupide Vautour - Nouvelle partie";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.opponentsNumber)).EndInit();

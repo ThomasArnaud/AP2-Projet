@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stupideVautourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stupidVultureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +64,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jeuToolStripMenuItem,
+            this.gameToolStripMenuItem,
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -72,26 +72,27 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // jeuToolStripMenuItem
+            // gameToolStripMenuItem
             // 
-            this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stupideVautourToolStripMenuItem,
+            this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stupidVultureToolStripMenuItem,
             this.statistiquesToolStripMenuItem,
             this.quitterToolStripMenuItem});
-            this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
-            this.jeuToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.jeuToolStripMenuItem.Text = "Partie";
+            this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.gameToolStripMenuItem.Text = "Partie";
             // 
-            // stupideVautourToolStripMenuItem
+            // stupidVultureToolStripMenuItem
             // 
-            this.stupideVautourToolStripMenuItem.Name = "stupideVautourToolStripMenuItem";
-            this.stupideVautourToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.stupideVautourToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.stupideVautourToolStripMenuItem.Text = "Nouvelle partie";
-            this.stupideVautourToolStripMenuItem.Click += new System.EventHandler(this.stupideVautourToolStripMenuItem_Click);
+            this.stupidVultureToolStripMenuItem.Name = "stupidVultureToolStripMenuItem";
+            this.stupidVultureToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.stupidVultureToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.stupidVultureToolStripMenuItem.Text = "Nouvelle partie";
+            this.stupidVultureToolStripMenuItem.Click += new System.EventHandler(this.stupidVultureToolStripMenuItem_Click);
             // 
             // statistiquesToolStripMenuItem
             // 
+            this.statistiquesToolStripMenuItem.Enabled = false;
             this.statistiquesToolStripMenuItem.Name = "statistiquesToolStripMenuItem";
             this.statistiquesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
@@ -116,15 +117,17 @@
             // 
             // aideToolStripMenuItem
             // 
+            this.aideToolStripMenuItem.Enabled = false;
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
             this.aideToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // aProposToolStripMenuItem
             // 
+            this.aProposToolStripMenuItem.Enabled = false;
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
             // statusStrip1
@@ -363,8 +366,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripMenuItem jeuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stupideVautourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stupidVultureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statistiquesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
