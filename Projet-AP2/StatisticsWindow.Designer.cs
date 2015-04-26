@@ -1,6 +1,6 @@
 ﻿namespace Projet_AP2
 {
-    partial class Statistics
+    partial class StatisticsWindow
     {
         /// <summary>
         /// Required designer variable.

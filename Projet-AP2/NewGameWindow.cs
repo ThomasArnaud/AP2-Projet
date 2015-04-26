@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public partial class NewGame : Form
+    public partial class NewGameWindow : Form
     {
         protected List<ComboBox> computersList;
 
-        public NewGame()
+        public NewGameWindow()
         {
             InitializeComponent();
             this.computersList = new List<ComboBox>();

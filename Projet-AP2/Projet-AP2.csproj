@@ -48,18 +48,19 @@
     <Compile Include="DrawingNeededEventArgs.cs" />
     <Compile Include="EasyComputer.cs" />
     <Compile Include="GameFinishedEventArgs.cs" />
-    <Compile Include="NewGame.cs">
+    <Compile Include="Helper.cs" />
+    <Compile Include="NewGameWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewGame.Designer.cs">
-      <DependentUpon>NewGame.cs</DependentUpon>
+    <Compile Include="NewGameWindow.Designer.cs">
+      <DependentUpon>NewGameWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Pair.cs" />
-    <Compile Include="Statistics.cs">
+    <Compile Include="StatisticsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Statistics.Designer.cs">
-      <DependentUpon>Statistics.cs</DependentUpon>
+    <Compile Include="StatisticsWindow.Designer.cs">
+      <DependentUpon>StatisticsWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="TurnBegunEventArgs.cs" />
     <Compile Include="TurnFinishedEventArgs.cs" />
@@ -76,8 +77,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StupidVulture.cs" />
-    <EmbeddedResource Include="NewGame.resx">
-      <DependentUpon>NewGame.cs</DependentUpon>
+    <EmbeddedResource Include="NewGameWindow.resx">
+      <DependentUpon>NewGameWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,8 +89,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Statistics.resx">
-      <DependentUpon>Statistics.cs</DependentUpon>
+    <EmbeddedResource Include="StatisticsWindow.resx">
+      <DependentUpon>StatisticsWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window.resx">
       <DependentUpon>Window.cs</DependentUpon>

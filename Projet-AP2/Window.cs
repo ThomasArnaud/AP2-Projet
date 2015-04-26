@@ -84,7 +84,7 @@ namespace Projet_AP2
         /// <param name="e">Reference to the arguments of the event.</param>
         private void stupidVultureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewGame d = new NewGame();
+            NewGameWindow d = new NewGameWindow();
 
             if(d.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
@@ -179,7 +179,8 @@ namespace Projet_AP2
                 SizeF stringSize = graphics.MeasureString(deckCard.ToString(), font);
 
                 graphics.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
-                graphics.DrawString(deckCard.ToString(), font, brush, new PointF(308.0F + (50 - stringSize.Width) / 2, 190.0F + (100 - stringSize.Height) / 2));
+                // graphics.DrawString(deckCard.ToString(), font, brush, new PointF(308.0F + (50 - stringSize.Width) / 2, 190.0F + (100 - stringSize.Height) / 2));
+                graphics.DrawString(deckCard.ToString(), font, brush, Helper.centerBlock(308.0F, 190.0F, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 graphics.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
             }
 

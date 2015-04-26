@@ -1,6 +1,6 @@
 ﻿namespace Projet_AP2
 {
-    partial class NewGame
+    partial class NewGameWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -76,7 +76,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(227, 192);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(260, 177);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
@@ -149,8 +149,8 @@
             "Difficile"});
             this.difficultyComputer1.Location = new System.Drawing.Point(118, 53);
             this.difficultyComputer1.Name = "difficultyComputer1";
-            this.difficultyComputer1.Size = new System.Drawing.Size(61, 21);
-            this.difficultyComputer1.TabIndex = 6;
+            this.difficultyComputer1.Size = new System.Drawing.Size(139, 21);
+            this.difficultyComputer1.TabIndex = 3;
             // 
             // difficultyComputer3
             // 
@@ -162,8 +162,8 @@
             "Difficile"});
             this.difficultyComputer3.Location = new System.Drawing.Point(118, 103);
             this.difficultyComputer3.Name = "difficultyComputer3";
-            this.difficultyComputer3.Size = new System.Drawing.Size(61, 21);
-            this.difficultyComputer3.TabIndex = 8;
+            this.difficultyComputer3.Size = new System.Drawing.Size(139, 21);
+            this.difficultyComputer3.TabIndex = 5;
             // 
             // difficultyComputer4
             // 
@@ -175,8 +175,8 @@
             "Difficile"});
             this.difficultyComputer4.Location = new System.Drawing.Point(118, 128);
             this.difficultyComputer4.Name = "difficultyComputer4";
-            this.difficultyComputer4.Size = new System.Drawing.Size(61, 21);
-            this.difficultyComputer4.TabIndex = 9;
+            this.difficultyComputer4.Size = new System.Drawing.Size(139, 21);
+            this.difficultyComputer4.TabIndex = 6;
             // 
             // difficultyComputer2
             // 
@@ -188,16 +188,16 @@
             "Difficile"});
             this.difficultyComputer2.Location = new System.Drawing.Point(118, 78);
             this.difficultyComputer2.Name = "difficultyComputer2";
-            this.difficultyComputer2.Size = new System.Drawing.Size(61, 21);
-            this.difficultyComputer2.TabIndex = 7;
+            this.difficultyComputer2.Size = new System.Drawing.Size(139, 21);
+            this.difficultyComputer2.TabIndex = 4;
             // 
             // playButton
             // 
             this.playButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.playButton.Location = new System.Drawing.Point(163, 168);
+            this.playButton.Location = new System.Drawing.Point(196, 153);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(61, 21);
-            this.playButton.TabIndex = 11;
+            this.playButton.TabIndex = 7;
             this.playButton.Text = "Jouer";
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
@@ -206,10 +206,10 @@
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(3, 168);
+            this.cancelButton.Location = new System.Drawing.Point(3, 153);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(61, 21);
-            this.cancelButton.TabIndex = 10;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Annuler";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -218,8 +218,8 @@
             // 
             this.playerName.Location = new System.Drawing.Point(118, 3);
             this.playerName.Name = "playerName";
-            this.playerName.Size = new System.Drawing.Size(106, 20);
-            this.playerName.TabIndex = 12;
+            this.playerName.Size = new System.Drawing.Size(139, 20);
+            this.playerName.TabIndex = 1;
             // 
             // label6
             // 
@@ -247,8 +247,8 @@
             0,
             0});
             this.opponentsNumber.Name = "opponentsNumber";
-            this.opponentsNumber.Size = new System.Drawing.Size(106, 20);
-            this.opponentsNumber.TabIndex = 14;
+            this.opponentsNumber.Size = new System.Drawing.Size(139, 20);
+            this.opponentsNumber.TabIndex = 2;
             this.opponentsNumber.Value = new decimal(new int[] {
             1,
             0,
@@ -256,15 +256,15 @@
             0});
             this.opponentsNumber.ValueChanged += new System.EventHandler(this.playersNumber_ValueChanged);
             // 
-            // NewGame
+            // NewGameWindow
             // 
             this.AcceptButton = this.playButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(251, 216);
+            this.ClientSize = new System.Drawing.Size(284, 202);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "NewGame";
+            this.Name = "NewGameWindow";
             this.Text = "Stupide Vautour - Nouvelle partie";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

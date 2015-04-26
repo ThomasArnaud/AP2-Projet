@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public partial class Statistics : Form
+    public partial class StatisticsWindow : Form
     {
-        public Statistics()
+        public StatisticsWindow()
         {
             InitializeComponent();
         }
