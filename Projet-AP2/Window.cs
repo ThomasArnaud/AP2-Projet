@@ -176,8 +176,10 @@ namespace Projet_AP2
             // Draw the deck if needed
             if(deckCard != 0)
             {
+                SizeF stringSize = graphics.MeasureString(deckCard.ToString(), font);
+
                 graphics.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
-                graphics.DrawString(deckCard.ToString(), font, brush, new PointF(330, 235));
+                graphics.DrawString(deckCard.ToString(), font, brush, new PointF(308.0F + (50 - stringSize.Width) / 2, 190.0F + (100 - stringSize.Height) / 2));
                 graphics.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
             }
 
