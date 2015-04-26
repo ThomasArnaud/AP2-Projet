@@ -1,6 +1,6 @@
 ﻿namespace Projet_AP2
 {
-    partial class Window
+    partial class MainWindow
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

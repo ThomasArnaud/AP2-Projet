@@ -64,11 +64,11 @@
     </Compile>
     <Compile Include="TurnBegunEventArgs.cs" />
     <Compile Include="TurnFinishedEventArgs.cs" />
-    <Compile Include="Window.cs">
+    <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window.Designer.cs">
-      <DependentUpon>Window.cs</DependentUpon>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="HardComputer.cs" />
     <Compile Include="HumanPlayer.cs" />
@@ -92,8 +92,8 @@
     <EmbeddedResource Include="StatisticsWindow.resx">
       <DependentUpon>StatisticsWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window.resx">
-      <DependentUpon>Window.cs</DependentUpon>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

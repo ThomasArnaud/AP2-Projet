@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public partial class Window : Form
+    public partial class MainWindow : Form
     {
         protected StupidVulture stupidVulture;
 
@@ -21,7 +21,7 @@ namespace Projet_AP2
         /// <summary>
         /// Creates a new main window.
         /// </summary>
-        public Window()
+        public MainWindow()
         {
             InitializeComponent();
 
