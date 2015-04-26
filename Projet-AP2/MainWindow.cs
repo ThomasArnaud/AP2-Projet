@@ -142,11 +142,15 @@ namespace Projet_AP2
         /// </summary>
         /// <param name="sender">Reference to the button on which the user clicked.</param>
         /// <param name="e">Reference to the arguments of the event.</param>
-        private void CardButton_Click(object sender, EventArgs e)
+        private void OnCardButtonClick(object sender, EventArgs e)
         {
-            // Determine which button was clicked
+            // Determine which button was clicked and make it invisible
             Button cardButton = (Button)sender;
             cardButton.Visible = false;
+
+            // Deactivate the card buttons
+            for(Byte i = 0; i < this.buttonsList.Count; i++)
+                this.buttonsList[i].Enabled = false;
 
             // Then, play the associated card
             this.stupidVulture.Play((Byte) (this.buttonsList.IndexOf(cardButton) + 1));
@@ -179,7 +183,6 @@ namespace Projet_AP2
                 SizeF stringSize = graphics.MeasureString(deckCard.ToString(), font);
 
                 graphics.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
-                // graphics.DrawString(deckCard.ToString(), font, brush, new PointF(308.0F + (50 - stringSize.Width) / 2, 190.0F + (100 - stringSize.Height) / 2));
                 graphics.DrawString(deckCard.ToString(), font, brush, Helper.centerBlock(308.0F, 190.0F, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 graphics.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
             }
@@ -187,7 +190,7 @@ namespace Projet_AP2
             // Draw the players' card if needed
             if(cardsList != null)
             {
-
+                
             }
 
             // Dispose of the drawing components
@@ -265,6 +268,7 @@ namespace Projet_AP2
         /// <param name="a">Reference to the arguments of the event.</param>
         protected void OnTurnEnded(object sender, TurnFinishedEventArgs a)
         {
+            // Draw the board with the new card to win
             this.drawBoard(null, this.stupidVulture.CardOnTop);
 
             // Activate every card button

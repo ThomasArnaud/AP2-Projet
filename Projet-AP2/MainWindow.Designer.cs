@@ -120,14 +120,14 @@
             this.aideToolStripMenuItem.Enabled = false;
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
             this.aideToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Enabled = false;
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
             // statusStrip1
@@ -177,7 +177,7 @@
             this.card1Button.TabIndex = 3;
             this.card1Button.Text = "1";
             this.card1Button.UseVisualStyleBackColor = true;
-            this.card1Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card1Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card2Button
             // 
@@ -188,7 +188,7 @@
             this.card2Button.TabIndex = 4;
             this.card2Button.Text = "2";
             this.card2Button.UseVisualStyleBackColor = true;
-            this.card2Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card2Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card3Button
             // 
@@ -199,7 +199,7 @@
             this.card3Button.TabIndex = 5;
             this.card3Button.Text = "3";
             this.card3Button.UseVisualStyleBackColor = true;
-            this.card3Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card3Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card4Button
             // 
@@ -210,7 +210,7 @@
             this.card4Button.TabIndex = 6;
             this.card4Button.Text = "4";
             this.card4Button.UseVisualStyleBackColor = true;
-            this.card4Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card4Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card5Button
             // 
@@ -221,7 +221,7 @@
             this.card5Button.TabIndex = 7;
             this.card5Button.Text = "5";
             this.card5Button.UseVisualStyleBackColor = true;
-            this.card5Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card5Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card6Button
             // 
@@ -232,7 +232,7 @@
             this.card6Button.TabIndex = 8;
             this.card6Button.Text = "6";
             this.card6Button.UseVisualStyleBackColor = true;
-            this.card6Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card6Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card7Button
             // 
@@ -243,7 +243,7 @@
             this.card7Button.TabIndex = 9;
             this.card7Button.Text = "7";
             this.card7Button.UseVisualStyleBackColor = true;
-            this.card7Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card7Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card8Button
             // 
@@ -253,7 +253,7 @@
             this.card8Button.TabIndex = 10;
             this.card8Button.Text = "8";
             this.card8Button.UseVisualStyleBackColor = true;
-            this.card8Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card8Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card9Button
             // 
@@ -263,7 +263,7 @@
             this.card9Button.TabIndex = 11;
             this.card9Button.Text = "9";
             this.card9Button.UseVisualStyleBackColor = true;
-            this.card9Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card9Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card10Button
             // 
@@ -273,7 +273,7 @@
             this.card10Button.TabIndex = 12;
             this.card10Button.Text = "10";
             this.card10Button.UseVisualStyleBackColor = true;
-            this.card10Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card10Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card11Button
             // 
@@ -283,7 +283,7 @@
             this.card11Button.TabIndex = 13;
             this.card11Button.Text = "11";
             this.card11Button.UseVisualStyleBackColor = true;
-            this.card11Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card11Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card12Button
             // 
@@ -293,7 +293,7 @@
             this.card12Button.TabIndex = 14;
             this.card12Button.Text = "12";
             this.card12Button.UseVisualStyleBackColor = true;
-            this.card12Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card12Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card13Button
             // 
@@ -303,7 +303,7 @@
             this.card13Button.TabIndex = 15;
             this.card13Button.Text = "13";
             this.card13Button.UseVisualStyleBackColor = true;
-            this.card13Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card13Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card14Button
             // 
@@ -313,7 +313,7 @@
             this.card14Button.TabIndex = 16;
             this.card14Button.Text = "14";
             this.card14Button.UseVisualStyleBackColor = true;
-            this.card14Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card14Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
             // card15Button
             // 
@@ -324,9 +324,9 @@
             this.card15Button.TabIndex = 17;
             this.card15Button.Text = "15";
             this.card15Button.UseVisualStyleBackColor = true;
-            this.card15Button.Click += new System.EventHandler(this.CardButton_Click);
+            this.card15Button.Click += new System.EventHandler(this.OnCardButtonClick);
             // 
-            // Window
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -350,7 +350,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Window";
+            this.Name = "MainWindow";
             this.Text = "Stupide Vautour";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
