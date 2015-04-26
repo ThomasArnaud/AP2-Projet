@@ -103,7 +103,7 @@ namespace Projet_AP2
                         break;
 
                         case 2:
-                            playersList.Add(new MediumComputer((Byte) i, "Ordinateur " + i, colorsArray[i - 1]));
+                            playersList.Add(new MediumComputer((Byte) i, "Ordinateur " + i, colorsArray[i - 1], 6));
                         break;
 
                         case 3:
