@@ -190,7 +190,49 @@ namespace Projet_AP2
             // Draw the players' card if needed
             if(cardsList != null)
             {
-                
+                switch(cardsList.Count)
+                {
+                    case 2:
+                        for (int i = 0; i < cardsList.Count; i++)
+                        {
+                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+
+                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
+                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                        }
+                    break;
+
+                    case 3:
+                        for (int i = 0; i < cardsList.Count; i++)
+                        {
+                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+
+                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
+                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                        }
+                    break;
+
+                    case 4:
+                        for (int i = 0; i < cardsList.Count; i++)
+                        {
+                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+
+                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
+                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                        }
+                    break;
+
+                    case 5:
+                        for (int i = 0; i < cardsList.Count; i++)
+                        {
+                            SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
+
+                            graphics.DrawRectangle(pen, location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F);
+                            graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(location[(cardsList.Count - 2), i].X, location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                        }
+                    break;
+                }
+                    
             }
 
             // Dispose of the drawing components
