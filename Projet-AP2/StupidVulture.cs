@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public delegate void GameFinishedEventHandler(object Sender, GameFinishedEventArgs e);
+    public delegate void GameFinishedEventHandler(object sender, GameFinishedEventArgs e);
 
-    public delegate void TurnBegunEventHandler(object Sender, TurnBegunEventArgs e);
+    public delegate void TurnBegunEventHandler(object sender, TurnBegunEventArgs e);
 
-    public delegate void TurnFinishedEventHandler(object Sender, TurnFinishedEventArgs e);
+    public delegate void TurnFinishedEventHandler(object sender, TurnFinishedEventArgs e);
 
     public class StupidVulture
     {

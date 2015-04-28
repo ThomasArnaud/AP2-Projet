@@ -107,7 +107,7 @@ namespace Projet_AP2
                         break;
 
                         case 3:
-                            playersList.Add(new HardComputer((Byte) i , "Ordinateur " + i, colorsArray[i - 1]));
+                            playersList.Add(new HardComputer((Byte) i , "Ordinateur " + i, colorsArray[i - 1], (Byte) (d.OpponentsNumber + 1), 6));
                         break;
                     }
                 }
@@ -116,7 +116,11 @@ namespace Projet_AP2
                 this.stupidVulture = new StupidVulture(playersList);
                 this.stupidVulture.GameFinishedEvent += new GameFinishedEventHandler(this.OnGameFinished);
                 this.stupidVulture.TurnBegunEvent += new TurnBegunEventHandler(this.OnTurnBegun);
-                this.stupidVulture.TurnFinishedEvent += new TurnFinishedEventHandler(this.OnTurnEnded);
+                this.stupidVulture.TurnFinishedEvent += new TurnFinishedEventHandler(this.OnTurnFinished);
+
+                foreach(Player p in playersList)
+                    if(p is HardComputer)
+                        this.stupidVulture.TurnFinishedEvent += new TurnFinishedEventHandler(((HardComputer) p).OnTurnFinished);
 
                 // Initialize the interface
                 this.playerNameLabel.Text = d.PlayerName;
@@ -273,7 +277,7 @@ namespace Projet_AP2
         /// </summary>
         /// <param name="sender">Reference to the Stupid Vulture game</param>
         /// <param name="a">Reference to the arguments of the event.</param>
-        protected void OnTurnEnded(object sender, TurnFinishedEventArgs a)
+        protected void OnTurnFinished(object sender, TurnFinishedEventArgs a)
         {
             // Draw the board with the new card to win
             this.drawBoard(a.Cards, this.stupidVulture.CardOnTop);
