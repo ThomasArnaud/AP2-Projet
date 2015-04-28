@@ -14,7 +14,9 @@ namespace Projet_AP2
     {
         protected StupidVulture stupidVulture;
 
-        protected PointF[,] location;
+        protected PointF[,] cardsLocation;
+
+        protected PointF[,] scoresLocation;
 
         protected List<Button> buttonsList;
 
@@ -49,32 +51,59 @@ namespace Projet_AP2
             }
 
             // Build a matrix of points representing where to draw the opponents' card
-            this.location = new PointF[4,5];
+            this.scoresLocation = new PointF[4,5];
 
-            location[0, 0] = new PointF(357.0F, 326.0F);
-            location[1, 0] = new PointF(357.0F, 326.0F);
-            location[2, 0] = new PointF(357.0F, 326.0F);
-            location[3, 0] = new PointF(357.0F, 326.0F);
+            scoresLocation[0, 0] = new PointF(-1, -1);
+            scoresLocation[1, 0] = new PointF(-1, -1);
+            scoresLocation[2, 0] = new PointF(-1, -1);
+            scoresLocation[3, 0] = new PointF(-1, -1);
 
-            location[0, 1] = new PointF(357.0F, 17.0F);
-            location[1, 1] = new PointF(246.0F, 35.0F);
-            location[2, 1] = new PointF(146.0F, 121.0F);
-            location[3, 1] = new PointF(66.0F, 199.0F);
+            scoresLocation[0, 1] = new PointF(357.0F, 0.0F);
+            scoresLocation[1, 1] = new PointF(246.0F, 18.0F);
+            scoresLocation[2, 1] = new PointF(146.0F, 104.0F);
+            scoresLocation[3, 1] = new PointF(66.0F, 182.0F);
 
-            location[0, 2] = new PointF(-1, -1);
-            location[1, 2] = new PointF(466.0F, 35.0F);
-            location[2, 2] = new PointF(357.0F, 17.0F);
-            location[3, 2] = new PointF(246.0F, 35.0F);
+            scoresLocation[0, 2] = new PointF(-1, -1);
+            scoresLocation[1, 2] = new PointF(466.0F, 18.0F);
+            scoresLocation[2, 2] = new PointF(357.0F, 0.0F);
+            scoresLocation[3, 2] = new PointF(246.0F, 18.0F);
 
-            location[0, 3] = new PointF(-1, -1);
-            location[1, 3] = new PointF(-1, -1);
-            location[2, 3] = new PointF(566.0F, 121.0F);
-            location[3, 3] = new PointF(466.0F, 35.0F);
+            scoresLocation[0, 3] = new PointF(-1, -1);
+            scoresLocation[1, 3] = new PointF(-1, -1);
+            scoresLocation[2, 3] = new PointF(566.0F, 104.0F);
+            scoresLocation[3, 3] = new PointF(466.0F, 18.0F);
 
-            location[0, 4] = new PointF(-1, -1);
-            location[1, 4] = new PointF(-1, -1);
-            location[2, 4] = new PointF(-1, -1);
-            location[3, 4] = new PointF(646.0F, 199.0F);
+            scoresLocation[0, 4] = new PointF(-1, -1);
+            scoresLocation[1, 4] = new PointF(-1, -1);
+            scoresLocation[2, 4] = new PointF(-1, -1);
+            scoresLocation[3, 4] = new PointF(646.0F, 182.0F);
+
+            this.cardsLocation = new PointF[4, 5];
+
+            cardsLocation[0, 0] = new PointF(357.0F, 326.0F);
+            cardsLocation[1, 0] = new PointF(357.0F, 326.0F);
+            cardsLocation[2, 0] = new PointF(357.0F, 326.0F);
+            cardsLocation[3, 0] = new PointF(357.0F, 326.0F);
+
+            cardsLocation[0, 1] = new PointF(357.0F, 17.0F);
+            cardsLocation[1, 1] = new PointF(246.0F, 35.0F);
+            cardsLocation[2, 1] = new PointF(146.0F, 121.0F);
+            cardsLocation[3, 1] = new PointF(66.0F, 199.0F);
+
+            cardsLocation[0, 2] = new PointF(-1, -1);
+            cardsLocation[1, 2] = new PointF(466.0F, 35.0F);
+            cardsLocation[2, 2] = new PointF(357.0F, 17.0F);
+            cardsLocation[3, 2] = new PointF(246.0F, 35.0F);
+
+            cardsLocation[0, 3] = new PointF(-1, -1);
+            cardsLocation[1, 3] = new PointF(-1, -1);
+            cardsLocation[2, 3] = new PointF(566.0F, 121.0F);
+            cardsLocation[3, 3] = new PointF(466.0F, 35.0F);
+
+            cardsLocation[0, 4] = new PointF(-1, -1);
+            cardsLocation[1, 4] = new PointF(-1, -1);
+            cardsLocation[2, 4] = new PointF(-1, -1);
+            cardsLocation[3, 4] = new PointF(646.0F, 199.0F);
         }
 
         /// <summary>
@@ -195,11 +224,21 @@ namespace Projet_AP2
                 {
                     SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
                     pen.Color = cardsList[i].First.Color;
-
-                    graphics.DrawRectangle(pen, this.location[cardsList.Count - 2, i].X, this.location[cardsList.Count - 2, i].Y, 50.0F, 100.0F);
-                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(this.location[cardsList.Count - 2, i].X, this.location[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                    graphics.DrawRectangle(pen, this.cardsLocation[cardsList.Count - 2, i].X, this.cardsLocation[cardsList.Count - 2, i].Y, 50.0F, 100.0F);
+                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(this.cardsLocation[cardsList.Count - 2, i].X, this.cardsLocation[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 }      
             }
+
+            // Draw the players' scores
+            if (cardsList != null)
+            {
+                for (Byte i = 1; i < cardsList.Count; i++)
+                {
+                    SizeF stringSize = graphics.MeasureString(this.stupidVulture.Players[i].Score.ToString(), font);
+                    graphics.DrawString("score : " + this.stupidVulture.Players[i].Score.ToString(), font, brush, scoresLocation[cardsList.Count - 2, i]);
+                }
+            }
+
 
             // Dispose of the drawing components
             pen.Dispose();
@@ -287,6 +326,11 @@ namespace Projet_AP2
             {
                 this.buttonsList[i].Enabled = true;
             }
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
