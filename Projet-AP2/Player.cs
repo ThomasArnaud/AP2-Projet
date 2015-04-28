@@ -62,6 +62,9 @@ namespace Projet_AP2
         /// </summary>
         protected List<Byte> cards;
 
+        /// <summary>
+        /// Gets the list of the player's cards.
+        /// </summary>
         public List<Byte> Cards
         {
             get
