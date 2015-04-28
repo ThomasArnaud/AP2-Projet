@@ -158,9 +158,6 @@ namespace Projet_AP2
 
             // Then, play the associated card
             this.stupidVulture.Play((Byte) (this.buttonsList.IndexOf(cardButton) + 1));
-
-            // Update the user's score
-            this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();
         }
 
         /// <summary>
@@ -281,6 +278,9 @@ namespace Projet_AP2
         {
             // Draw the board with the new card to win
             this.drawBoard(a.Cards, this.stupidVulture.CardOnTop);
+
+            // Update the user's score
+            this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();
 
             // Activate every card button
             for (Byte i = 0; i < this.buttonsList.Count; i++)
