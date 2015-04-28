@@ -16,7 +16,7 @@ namespace Projet_AP2
         public MediumComputer(Byte number, String name, Color color, SByte threshold) : base(number, name, color)
         {
             this.threshold = threshold;
-            this.random = new Random();
+            this.random = new Random(13 * this.number % 17);
         }
 
         public override Byte Play(SByte deckCard)

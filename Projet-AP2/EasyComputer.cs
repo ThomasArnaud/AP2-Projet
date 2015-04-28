@@ -13,7 +13,7 @@ namespace Projet_AP2
 
         public EasyComputer(Byte number, String name, Color color) : base(number, name, color)
         {
-            this.random = new Random((int) DateTime.Now.Ticks & 0x0000FFFF + this.number);
+            this.random = new Random (13*this.number % 17);
         }
 
         public EasyComputer(Byte number, String name, Color color, Byte rangeMaximumSize) : this(number, name, color)
