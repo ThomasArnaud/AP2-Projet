@@ -201,6 +201,7 @@ namespace Projet_AP2
             Graphics graphics = Graphics.FromImage(boardImage);
             Pen pen = new Pen(Color.Black, 1.0F);
             Font font = new Font("Arial", 12);
+            Font fontScores = new Font("Arial", 10);
             SolidBrush brush = new SolidBrush(Color.Black);
 
             // Initialize the image
@@ -234,8 +235,9 @@ namespace Projet_AP2
             {
                 for (Byte i = 1; i < cardsList.Count; i++)
                 {
+                    brush.Color = cardsList[i].First.Color;
                     SizeF stringSize = graphics.MeasureString(this.stupidVulture.Players[i].Score.ToString(), font);
-                    graphics.DrawString("score : " + this.stupidVulture.Players[i].Score.ToString(), font, brush, scoresLocation[cardsList.Count - 2, i]);
+                    graphics.DrawString("score : " + this.stupidVulture.Players[i].Score.ToString(), fontScores, brush, scoresLocation[cardsList.Count - 2, i]);
                 }
             }
 
