@@ -7,27 +7,51 @@ using System.Windows.Forms;
 
 namespace Projet_AP2
 {
-    public delegate void GameFinishedEventHandler(object sender, GameFinishedEventArgs e);
+    /// <summary>
+    /// Event handler for the GameFinished event.
+    /// </summary>
+    /// <param name="sender">Reference to the object that fired the event.</param>
+    /// <param name="e">Reference to the arguments of the event.</param>
+    public delegate void GameFinishedEventHandler(object sender, GameFinishedEventArgs a);
 
-    public delegate void TurnBegunEventHandler(object sender, TurnBegunEventArgs e);
+    /// <summary>
+    /// Event handler for the TurnBegun event.
+    /// </summary>
+    /// <param name="sender">Reference to the object that fired the event.</param>
+    /// <param name="e">Reference to the arguments of the event.</param>
+    public delegate void TurnBegunEventHandler(object sender, TurnBegunEventArgs a);
 
-    public delegate void TurnFinishedEventHandler(object sender, TurnFinishedEventArgs e);
+    /// <summary>
+    /// Event handler for the TurnFinished event.
+    /// </summary>
+    /// <param name="sender">Reference to the object that fired the event.</param>
+    /// <param name="e">Reference to the arguments of the event.</param>
+    public delegate void TurnFinishedEventHandler(object sender, TurnFinishedEventArgs a);
 
     public class StupidVulture
     {
+        /// <summary>
+        /// Holds a reference to the GameFinished event handler.
+        /// </summary>
         public event GameFinishedEventHandler GameFinishedEvent;
 
+        /// <summary>
+        /// Holds a reference to the TurnBegun event handler.
+        /// </summary>
         public event TurnBegunEventHandler TurnBegunEvent;
 
+        /// <summary>
+        /// Holds a reference to the TurnFinished event handler.
+        /// </summary>
         public event TurnFinishedEventHandler TurnFinishedEvent;
 
         /// <summary>
-        /// Represents the list of currently playing players.
+        /// Holds a reference to the list of players.
         /// </summary>
         protected List<Player> players;
 
         /// <summary>
-        /// Gets the list of currently playing players.
+        /// Gets the list of players.
         /// </summary>
         public List<Player> Players
         {
@@ -87,6 +111,14 @@ namespace Projet_AP2
                 this.deck.Push(c);
         }
 
+        /// <summary>
+        /// Main method of the game class.
+        /// This method is called by the main window when the human user has
+        /// selected which card he wanted to play. It calls every computer
+        /// player to get their card and then determine who earned the card
+        /// on top of the deck.
+        /// </summary>
+        /// <param name="card">Value of the human player's card.</param>
         public void Play(Byte card)
         {
             // Create the list of pairs
@@ -110,23 +142,20 @@ namespace Projet_AP2
             // 1.   Go through the list once to remove the ones which are equal
             // 2.1. Get the card with the most value representing the winner of the mouse card
             // 2.2. Get the card with the least value representing the winner of the vulture card
-            List<Byte> usedCards = new List<Byte>();
             List<Pair<Player, Byte>> pairsListCopy = new List<Pair<Player, Byte>>(pairsList);
+            List<Byte> usedCards = new List<Byte>();
 
             foreach (Pair<Player, Byte> pair in pairsListCopy)
             {
                 if(usedCards.Contains(pair.Second))
-                {
                     pairsList.RemoveAll(x => x.Second == pair.Second);
-                }
                 else
-                {
                     usedCards.Add(pair.Second);
-                }
             }
 
             if(pairsList.Count > 0)
             {
+                // There is still at least one card
                 if(this.deck.Peek() > 0)
                 {
                     // Search the highest card
@@ -181,9 +210,7 @@ namespace Projet_AP2
                         highestScore = this.players[i].Score;
                     }
                     else if(this.players[i].Score == highestScore)
-                    {
                         winnersList.Add(this.players[i]);
-                    }
                 }
 
                 // Fire the end of game event
@@ -191,18 +218,30 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// Helper method to fire the GameFinished event.
+        /// </summary>
+        /// <param name="a">Reference to the arguments of the event.</param>
         protected void gamefinished(GameFinishedEventArgs a)
         {
             if(this.GameFinishedEvent != null)
                 this.GameFinishedEvent(this, a);
         }
 
+        /// <summary>
+        /// Helper method to fire the TurnBegun event.
+        /// </summary>
+        /// <param name="a">Reference to the arguments of the event.</param>
         protected void turnBegun(TurnBegunEventArgs a)
         {
             if(this.TurnBegunEvent != null)
                 this.TurnBegunEvent(this, a);
         }
 
+        /// <summary>
+        /// Helper method to fire the TurnFinished event.
+        /// </summary>
+        /// <param name="a">Reference to the arguments of the event.</param>
         protected void turnFinished(TurnFinishedEventArgs a)
         {
             if(this.TurnFinishedEvent != null)

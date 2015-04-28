@@ -8,8 +8,14 @@ namespace Projet_AP2
 {
     public class GameFinishedEventArgs : EventArgs
     {
+        /// <summary>
+        /// Holds a reference to the list of winners.
+        /// </summary>
         protected List<Player> winnersList;
 
+        /// <summary>
+        /// Gets the list of winners.
+        /// </summary>
         public List<Player> Winners
         {
             get
@@ -18,6 +24,9 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// Tests if the victory is a draw.
+        /// </summary>
         public Boolean IsDraw
         {
             get
@@ -26,8 +35,14 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// Represents the highest score of the game.
+        /// </summary>
         protected SByte highestScore;
 
+        /// <summary>
+        /// Gets the highest score of the game.
+        /// </summary>
         public SByte HighestScore
         {
             get
@@ -36,6 +51,11 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// Creates new arguments for a GameFinished event.
+        /// </summary>
+        /// <param name="winnersList">Reference to the list of winners.</param>
+        /// <param name="highestScore">Highest score of the game.</param>
         public GameFinishedEventArgs(List<Player> winnersList, SByte highestScore) : base()
         {
             this.winnersList = winnersList;

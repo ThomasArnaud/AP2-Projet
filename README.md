@@ -42,7 +42,7 @@ associé est caché.
     * [8 12] : plage des cartes négatives
     * [10 15] : plage des meilleures cartes
     * [1 8] : plage des cartes restantes
-* Définition d'un seul à partir duquel la carte devient intéressante et doit être
+* Définition d'un seuil à partir duquel la carte devient intéressante et doit être
 remportée
 
 ## Difficile
@@ -58,3 +58,7 @@ sûr de jouer une carte.
 * Présence de bugs
 * Qualité du travail de groupe
 * Questions sur le code
+
+# Problèmes rencontrés
+* Trouver un algorithme pour l'IA difficile : minimax non implémentable car les
+conditions ne sont pas remplies, essai d'adaptation non fructueux
