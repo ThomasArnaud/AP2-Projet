@@ -38,18 +38,20 @@ associé est caché.
 * Restriction des choix possibles de carte en fonction de la carte jouée
 
 ## Moyenne
-* Algorithme __glouton__ : meilleure solution locale
-* Si la carte est négative, chercher à l'éviter avec des cartes moyennes
-* Si la carte dépasse le seuil, toujours jouer les meilleures cartes
-* Sinon, jouer aléatoirement dans les cartes moyennes
+* Attribution de plages de cartes à utiliser selon la carte à récupérer ou éviter
+    * [8 12] : plage des cartes négatives
+    * [10 15] : plage des meilleures cartes
+    * [1 8] : plage des cartes restantes
+* Définition d'un seul à partir duquel la carte devient intéressante et doit être
+remportée
 
 ## Difficile
-* Algorithme __brutal__ : solution optimale
-* Voir algorithme de Monte-carlo et UCB
-* Simuler le restant du jeu dans une méthode récursive de la classe et regarder
-ce qui a la meilleure probabilité de gagner
+* Basée sur l'IA moyenne
+* Prise en compte des cartes jouées par les adversaires afin de construire les
+plages de cartes possibles en définissant le nombre à partir duquel il est plus
+sûr de jouer une carte.
 
-# Evaluation
+# Critères d'évaluation
 * Qualité de l'interface : ergonomie, facilité d'utilisation
 * Qualité du code : code factorisé, bien commenté
 * Temps de réponse des IAs : < 3s ou < 4s

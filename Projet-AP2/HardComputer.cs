@@ -28,7 +28,7 @@ namespace Projet_AP2
             this.playedCards = new Hashtable();
             this.playersNumber = playersNumber;
             this.threshold = threshold;
-            this.random = new Random(this.number * 19 % 11);
+            this.random = new Random(20 + (this.number * 19 % 7));
             
             switch(this.playersNumber)
             {
@@ -42,7 +42,7 @@ namespace Projet_AP2
                     break;
 
                 default:
-                    this.safeNumber = 0;
+                    this.safeNumber = 1;
                     break;
             }
         }
