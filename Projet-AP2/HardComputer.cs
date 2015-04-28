@@ -32,71 +32,60 @@ namespace Projet_AP2
             
             switch(this.playersNumber)
             {
+                case 2:
+                    this.safeNumber = 1;
+                break;
+
                 case 3:
                 case 4:
                     this.safeNumber = 2;
-                    break;
+                break;
 
                 case 5:
                     this.safeNumber = 3;
-                    break;
-
-                default:
-                    this.safeNumber = 1;
-                    break;
+                break;
             }
         }
 
-        /**
-         * Si 2 joueurs -> Minimax
-         * Sinon, comportement moyen + tenir des cartes des autres
-         */
         public override Byte Play(SByte deckCard)
         {
-            if(this.playersNumber > 2)
+            // Determine which cards to play in what condition
+            List<Byte> forBest = new List<Byte>();
+            List<Byte> forNegative = new List<Byte>();
+            List<Byte> forMedium = new List<Byte>();
+
+            for (Byte i = 0; i < this.cards.Count; i++)
             {
-                // Determine which cards to play in what condition
-                List<Byte> forBest = new List<Byte>();
-                List<Byte> forNegative = new List<Byte>();
-                List<Byte> forMedium = new List<Byte>();
-
-                for (Byte i = 0; i < this.cards.Count; i++)
+                if (this.cards[i] < 8)
                 {
-                    if (this.cards[i] < 8)
+                    if(this.GetCardNumber(this.cards[i]) >= this.safeNumber)
+                        forMedium.Add(this.cards[i]);
+                }
+                else if (this.cards[i] >= 8)
+                {
+                    if (this.cards[i] <= 12 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
                     {
-                        if(this.GetCardNumber(this.cards[i]) >= this.safeNumber)
-                            forMedium.Add(this.cards[i]);
+                        forNegative.Add(this.cards[i]);
                     }
-                    else if (this.cards[i] >= 8)
-                    {
-                        if (this.cards[i] <= 12 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
-                        {
-                            forNegative.Add(this.cards[i]);
-                        }
 
-                        if (this.cards[i] >= 10 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
-                        {
-                            forBest.Add(this.cards[i]);
-                        }
+                    if (this.cards[i] >= 10 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
+                    {
+                        forBest.Add(this.cards[i]);
                     }
                 }
+            }
 
-                if (deckCard >= this.threshold)
-                {
-                    return forBest.Count > 0 ? forBest[this.random.Next(forBest.Count)] : this.cards[this.random.Next(this.cards.Count)];
-                }
-                else if (deckCard < 0)
-                {
-                    return forNegative.Count > 0 ? forNegative[this.random.Next(forNegative.Count)] : this.cards[this.random.Next(this.cards.Count)];
-                }
-                else
-                {
-                    return forMedium.Count > 0 ? forMedium[this.random.Next(forMedium.Count)] : this.cards[this.random.Next(this.cards.Count)];
-                }
+            if (deckCard >= this.threshold)
+            {
+                return forBest.Count > 0 ? forBest[this.random.Next(forBest.Count)] : this.cards[this.random.Next(this.cards.Count)];
+            }
+            else if (deckCard < 0)
+            {
+                return forNegative.Count > 0 ? forNegative[this.random.Next(forNegative.Count)] : this.cards[this.random.Next(this.cards.Count)];
             }
             else
             {
-                return 0;
+                return forMedium.Count > 0 ? forMedium[this.random.Next(forMedium.Count)] : this.cards[this.random.Next(this.cards.Count)];
             }
         }
 
