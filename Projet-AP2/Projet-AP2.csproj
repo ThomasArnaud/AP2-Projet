@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputerPlayer.cs" />
-    <Compile Include="DrawingNeededEventArgs.cs" />
     <Compile Include="EasyComputer.cs" />
     <Compile Include="GameFinishedEventArgs.cs" />
     <Compile Include="Helper.cs" />
