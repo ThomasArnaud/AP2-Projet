@@ -70,8 +70,14 @@ namespace Projet_AP2
             }
         }
 
+        /// <summary>
+        /// Represents the player's score.
+        /// </summary>
         protected SByte score;
 
+        /// <summary>
+        /// Gets or sets the player's score.
+        /// </summary>
         public SByte Score
         {
             get
@@ -102,6 +108,11 @@ namespace Projet_AP2
                 this.cards.Add(i);
         }
 
+        /// <summary>
+        /// Asks a player for the card to play knowing the card on top of the deck.
+        /// </summary>
+        /// <param name="deckCard">Value of the card on the top of the deck.</param>
+        /// <returns>Value of the card to play.</returns>
         public abstract Byte Play(SByte deckCard);
     }
 }
