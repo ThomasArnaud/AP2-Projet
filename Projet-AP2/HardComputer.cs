@@ -81,15 +81,14 @@ namespace Projet_AP2
 
             for (Byte i = 0; i < this.cards.Count; i++)
             {
-                if(this.cards[i] < 8)
-                    if(this.GetCardNumber(this.cards[i]) >= this.safeNumber)
+                if(this.cards[i] < 8 && (this.cards.Count > 12 || this.GetCardNumber(this.cards[i]) >= this.safeNumber))
                         forMedium.Add(this.cards[i]);
                 else if(this.cards[i] >= 8)
                 {
-                    if(this.cards[i] <= 12 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
+                    if(this.cards[i] <= 12 && (this.cards.Count > 12 || this.GetCardNumber(this.cards[i]) >= this.safeNumber))
                         forNegative.Add(this.cards[i]);
 
-                    if(this.cards[i] >= 10 && this.GetCardNumber(this.cards[i]) >= this.safeNumber)
+                    if(this.cards[i] >= 10 && (this.cards.Count > 12 || this.GetCardNumber(this.cards[i]) >= this.safeNumber))
                         forBest.Add(this.cards[i]);
                 }
             }
