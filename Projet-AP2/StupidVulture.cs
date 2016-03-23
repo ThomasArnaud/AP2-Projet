@@ -136,7 +136,7 @@ namespace Projet_AP2
             }
 
             // Fire beginning of the turn event
-            this.turnBegun(new TurnBegunEventArgs(pairsList));
+            this.TurnBegun(new TurnBegunEventArgs(pairsList));
 
             // Then, compare them
             // 1.   Go through the list once to remove the ones which are equal
@@ -169,7 +169,7 @@ namespace Projet_AP2
                     pairsList[highestIndex].First.Score += this.deck.Peek();
 
                     // Fire the end of turn event
-                    this.turnFinished(new TurnFinishedEventArgs(pairsList[highestIndex].First, this.deck.Pop(), pairsList[highestIndex].Second, pairsListCopy));
+                    this.TurnFinished(new TurnFinishedEventArgs(pairsList[highestIndex].First, this.deck.Pop(), pairsList[highestIndex].Second, pairsListCopy));
                 }
                 else
                 {
@@ -184,13 +184,13 @@ namespace Projet_AP2
                     pairsList[lowestIndex].First.Score += this.deck.Peek();
 
                     // Fire the end of turn event
-                    this.turnFinished(new TurnFinishedEventArgs(pairsList[lowestIndex].First, this.deck.Pop(), pairsList[lowestIndex].Second, pairsListCopy));
+                    this.TurnFinished(new TurnFinishedEventArgs(pairsList[lowestIndex].First, this.deck.Pop(), pairsList[lowestIndex].Second, pairsListCopy));
                 }
             }
             else
             {
                 // Nobody can win the card so just ignore it and fire the end of turn event
-                this.turnFinished(new TurnFinishedEventArgs(null, this.deck.Pop(), 0, pairsListCopy));
+                this.TurnFinished(new TurnFinishedEventArgs(null, this.deck.Pop(), 0, pairsListCopy));
             }
 
             // Is the game over?
@@ -214,7 +214,7 @@ namespace Projet_AP2
                 }
 
                 // Fire the end of game event
-                this.gamefinished(new GameFinishedEventArgs(winnersList, highestScore));
+                this.GameFinished(new GameFinishedEventArgs(winnersList, highestScore));
             }
         }
 
@@ -222,7 +222,7 @@ namespace Projet_AP2
         /// Helper method to fire the GameFinished event.
         /// </summary>
         /// <param name="a">Reference to the arguments of the event.</param>
-        protected void gamefinished(GameFinishedEventArgs a)
+        protected void GameFinished(GameFinishedEventArgs a)
         {
             if(this.GameFinishedEvent != null)
                 this.GameFinishedEvent(this, a);
@@ -232,7 +232,7 @@ namespace Projet_AP2
         /// Helper method to fire the TurnBegun event.
         /// </summary>
         /// <param name="a">Reference to the arguments of the event.</param>
-        protected void turnBegun(TurnBegunEventArgs a)
+        protected void TurnBegun(TurnBegunEventArgs a)
         {
             if(this.TurnBegunEvent != null)
                 this.TurnBegunEvent(this, a);
@@ -242,7 +242,7 @@ namespace Projet_AP2
         /// Helper method to fire the TurnFinished event.
         /// </summary>
         /// <param name="a">Reference to the arguments of the event.</param>
-        protected void turnFinished(TurnFinishedEventArgs a)
+        protected void TurnFinished(TurnFinishedEventArgs a)
         {
             if(this.TurnFinishedEvent != null)
                 this.TurnFinishedEvent(this, a);

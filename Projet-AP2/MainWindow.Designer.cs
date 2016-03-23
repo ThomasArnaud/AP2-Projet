@@ -167,7 +167,6 @@
             this.pictureBox.Size = new System.Drawing.Size(760, 439);
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
-            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             // 
             // card1Button
             // 

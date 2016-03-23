@@ -194,7 +194,7 @@ namespace Projet_AP2
         /// </summary>
         /// <param name="cardsList">Reference to the list of players and cards.</param>
         /// <param name="deckCard">Value of the card on top of the deck.</param>
-        protected void drawBoard(List<Pair<Player, Byte>> cardsList, SByte deckCard)
+        protected void DrawBoard(List<Pair<Player, Byte>> cardsList, SByte deckCard)
         {
             // Initialize the drawing components
             Bitmap boardImage = new Bitmap(this.pictureBox.Size.Width, this.pictureBox.Size.Height);
@@ -214,7 +214,7 @@ namespace Projet_AP2
                 SizeF stringSize = graphics.MeasureString(deckCard.ToString(), font);
 
                 graphics.DrawRectangle(pen, 308.0F, 190.0F, 50.0F, 100.0F);
-                graphics.DrawString(deckCard.ToString(), font, brush, Helper.centerBlock(308.0F, 190.0F, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                graphics.DrawString(deckCard.ToString(), font, brush, Helper.CenterBlock(308.0F, 190.0F, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 graphics.DrawRectangle(pen, 428.0F, 190.0F, 50.0F, 100.0F);
             }
 
@@ -226,7 +226,7 @@ namespace Projet_AP2
                     SizeF stringSize = graphics.MeasureString(cardsList[i].Second.ToString(), font);
                     pen.Color = cardsList[i].First.Color;
                     graphics.DrawRectangle(pen, this.cardsLocation[cardsList.Count - 2, i].X, this.cardsLocation[cardsList.Count - 2, i].Y, 50.0F, 100.0F);
-                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.centerBlock(this.cardsLocation[cardsList.Count - 2, i].X, this.cardsLocation[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
+                    graphics.DrawString(cardsList[i].Second.ToString(), font, brush, Helper.CenterBlock(this.cardsLocation[cardsList.Count - 2, i].X, this.cardsLocation[(cardsList.Count - 2), i].Y, 50.0F, 100.0F, stringSize.Width, stringSize.Height));
                 }      
             }
 
@@ -253,7 +253,7 @@ namespace Projet_AP2
         protected void OnGameBegun()
         {
             // Draw the board with only the deck
-            this.drawBoard(null, this.stupidVulture.CardOnTop);
+            this.DrawBoard(null, this.stupidVulture.CardOnTop);
 
             // Activate every card button
             for(Byte i = 0; i < this.buttonsList.Count; i++)
@@ -271,7 +271,7 @@ namespace Projet_AP2
         protected void OnGameFinished(object sender, GameFinishedEventArgs a)
         {
             // Clear the board
-            this.drawBoard(null, 0);
+            this.DrawBoard(null, 0);
 
             if(!a.IsDraw)
             {
@@ -307,7 +307,7 @@ namespace Projet_AP2
         /// <param name="a">Reference to the arguments of the event.</param>
         protected void OnTurnBegun(object sender, TurnBegunEventArgs a)
         {
-            this.drawBoard(a.Cards, this.stupidVulture.CardOnTop);
+            this.DrawBoard(a.Cards, this.stupidVulture.CardOnTop);
         }
 
         /// <summary>
@@ -318,7 +318,7 @@ namespace Projet_AP2
         protected void OnTurnFinished(object sender, TurnFinishedEventArgs a)
         {
             // Draw the board with the new card to win
-            this.drawBoard(a.Cards, this.stupidVulture.CardOnTop);
+            this.DrawBoard(a.Cards, this.stupidVulture.CardOnTop);
 
             // Update the user's score
             this.scoreLabel.Text = this.stupidVulture.Players[0].Score.ToString();

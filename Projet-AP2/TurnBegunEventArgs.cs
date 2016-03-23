@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projet_AP2
 {
-    public class TurnBegunEventArgs
+    public class TurnBegunEventArgs : EventArgs
     {
         /// <summary>
         /// Holds a reference to the list of card played by each player.
